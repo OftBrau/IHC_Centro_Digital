@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Abuelos en Red</title>
+    <link rel="stylesheet" href="../assets/css/admin/usuarioAdmin.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo">🏛️</div>
+            <div class="logo-text">
+                <h1>Panel Administrador</h1>
+                <p>Abuelos en Red</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <button class="nav-btn">📊 Dashboard</button>
+            <button class="nav-btn active">👥 Usuarios</button>
+            <button class="nav-btn">⚠️ Emergencias</button>
+            <button class="nav-btn">💊 Medicamentos</button>
+            <button class="nav-btn">📈 Reportes</button>
+            <button class="nav-btn">⚙️ Configuración</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Gestión de Usuarios</h1>
+        <p class="page-subtitle">Administra los adultos mayores registrados en la plataforma</p>
+
+        <div class="search-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Buscar por nombre, email o teléfono...">
+            </div>
+            <button class="add-user-btn">
+                <span>➕</span>
+                Agregar Usuario
+            </button>
+        </div>
+
+        <div class="users-grid">
+            <!-- Usuario 1 -->
+            <div class="user-card">
+                <div class="user-header">
+                    <div class="user-avatar blue">M</div>
+                    <div class="user-info-header">
+                        <h3>María González Ruiz</h3>
+                        <p>72 años</p>
+                    </div>
+                    <span class="status-badge active">Activo</span>
+                </div>
+                <div class="user-details">
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <span>maria.gonzalez@email.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📱</span>
+                        <span>+51 987 654 321</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <span>Av. Tupac Amaru 210, Los Olivos, Lima</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">👤</span>
+                        <span>Ana González: +51 987 123 456</span>
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-label">Medicamentos:</span>
+                        <span class="stat-value">4</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Última actividad:</span>
+                        <span class="stat-value">Hace 10 min</span>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-details">📋 Ver Detalles</button>
+                    <button class="btn-delete">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Usuario 2 -->
+            <div class="user-card">
+                <div class="user-header">
+                    <div class="user-avatar blue">J</div>
+                    <div class="user-info-header">
+                        <h3>José Rodríguez Pérez</h3>
+                        <p>68 años</p>
+                    </div>
+                    <span class="status-badge active">Activo</span>
+                </div>
+                <div class="user-details">
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <span>jose.rodriguez@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📱</span>
+                        <span>+51 987 654 322</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <span>Jr. Los Altos 345, Independencia, Lima</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">👤</span>
+                        <span>Carlos Rodríguez: +51 987 123 457</span>
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-label">Medicamentos:</span>
+                        <span class="stat-value">3</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Última actividad:</span>
+                        <span class="stat-value">Hace 1 hora</span>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-details">📋 Ver Detalles</button>
+                    <button class="btn-delete">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Usuario 3 -->
+            <div class="user-card">
+                <div class="user-header">
+                    <div class="user-avatar blue">A</div>
+                    <div class="user-info-header">
+                        <h3>Ana López Torres</h3>
+                        <p>75 años</p>
+                    </div>
+                    <span class="status-badge active">Activo</span>
+                </div>
+                <div class="user-details">
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <span>ana.lopez@email.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📱</span>
+                        <span>+51 987 654 323</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <span>Av. Universitaria 567, Comas, Lima</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">👤</span>
+                        <span>Luis López: +51 987 123 458</span>
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-label">Medicamentos:</span>
+                        <span class="stat-value">5</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Última actividad:</span>
+                        <span class="stat-value">Hace 30 min</span>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-details">📋 Ver Detalles</button>
+                    <button class="btn-delete">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Usuario 4 -->
+            <div class="user-card">
+                <div class="user-header">
+                    <div class="user-avatar blue">C</div>
+                    <div class="user-info-header">
+                        <h3>Carlos Pérez Silva</h3>
+                        <p>70 años</p>
+                    </div>
+                    <span class="status-badge active">Activo</span>
+                </div>
+                <div class="user-details">
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <span>carlos.perez@email.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📱</span>
+                        <span>+51 987 654 324</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <span>Av. Las Palmeras 123, San Martín de Porres, Lima</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">👤</span>
+                        <span>María Pérez: +51 987 123 459</span>
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-label">Medicamentos:</span>
+                        <span class="stat-value">2</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Última actividad:</span>
+                        <span class="stat-value">Hace 2 horas</span>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-details">📋 Ver Detalles</button>
+                    <button class="btn-delete">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Usuario 5 -->
+            <div class="user-card">
+                <div class="user-header">
+                    <div class="user-avatar blue">R</div>
+                    <div class="user-info-header">
+                        <h3>Rosa Martínez Flores</h3>
+                        <p>78 años</p>
+                    </div>
+                    <span class="status-badge pending">Pendiente</span>
+                </div>
+                <div class="user-details">
+                    <div class="detail-item">
+                        <span class="icon">📧</span>
+                        <span>rosa.martinez@email.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📱</span>
+                        <span>+51 987 654 325</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <span>Jr. Huaraz 789, Los Olivos, Lima</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">👤</span>
+                        <span>Pedro Martínez: +51 987 123 460</span>
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="stat">
+                        <span class="stat-label">Medicamentos:</span>
+                        <span class="stat-value">6</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Última actividad:</span>
+                        <span class="stat-value">Hace 2 días</span>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn-details">📋 Ver Detalles</button>
+                    <button class="btn-delete">🗑️</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">🏛️</div>
+            </div>
+            <div class="footer-section">
+                <h4>Autores</h4>
+                <ul>
+                    <li>Anabel Villanueva Alejandro Sebastián</li>
+                    <li>Rosalía Pobleano Aguirre Zamora</li>
+                    <li>Juan Miguel Tavara Malpartida</li>
+                    <li>Dustin Andrés Farfán Malégue</li>
+                    <li>Dominique Grieko Iphhosme Smith</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Docente</h4>
+                <ul>
+                    <li>Ing. Juan Ricardo Tapia Carbajal</li>
+                    <li>2025</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Institución</h4>
+                <ul>
+                    <li>Universidad Peruana del Norte</li>
+                    <li>Lima Norte, Perú</li>
+                    <li>2025</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores
+        </div>
+    </footer>
+
+    <button class="alert-button">⚠️</button>
+</body>
+</html>

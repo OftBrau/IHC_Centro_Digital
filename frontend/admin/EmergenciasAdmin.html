@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Emergencias - Abuelos en Red</title>
+    <link rel="stylesheet" href="../assets/css/admin/EmergenciasAdmin.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-section">
+            <div class="logo">🏛️</div>
+            <div class="logo-text">
+                <h1>Panel Administrador</h1>
+                <p>Abuelos en Red</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <button class="nav-btn">📊 Dashboard</button>
+            <button class="nav-btn">👥 Usuarios</button>
+            <button class="nav-btn active">⚠️ Emergencias</button>
+            <button class="nav-btn">💊 Medicamentos</button>
+            <button class="nav-btn">📈 Reportes</button>
+            <button class="nav-btn">⚙️ Configuración</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Monitor de Emergencias</h1>
+        <p class="page-subtitle">Sistema de seguimiento de alertas en tiempo real</p>
+
+        <!-- Tarjetas de Resumen -->
+        <div class="summary-cards">
+            <div class="summary-card red">
+                <div class="summary-info">
+                    <h3>Alertas Activas</h3>
+                    <div class="summary-number">1</div>
+                </div>
+                <div class="summary-icon red-icon">🔔</div>
+            </div>
+
+            <div class="summary-card yellow">
+                <div class="summary-info">
+                    <h3>En Proceso</h3>
+                    <div class="summary-number">2</div>
+                </div>
+                <div class="summary-icon yellow-icon">⏱️</div>
+            </div>
+
+            <div class="summary-card green">
+                <div class="summary-info">
+                    <h3>Resueltas Hoy</h3>
+                    <div class="summary-number">2</div>
+                </div>
+                <div class="summary-icon green-icon">✓</div>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters-section">
+            <div class="filter-label">
+                <span>🔽</span>
+                Filtrar por estado:
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active">Todas</button>
+                <button class="filter-btn">Activas</button>
+                <button class="filter-btn">En Proceso</button>
+                <button class="filter-btn">Resueltas</button>
+            </div>
+        </div>
+
+        <!-- Lista de Emergencias -->
+        <div class="emergencies-list">
+            
+            <!-- Emergencia 1 - Activa -->
+            <div class="emergency-card active-border">
+                <div class="emergency-icon red-bg">🔔</div>
+                <div class="emergency-content">
+                    <div class="emergency-header">
+                        <h3>María González Ruiz</h3>
+                        <span class="priority-badge active-badge">Activa</span>
+                        <span class="priority-level high">Prioridad Alta</span>
+                    </div>
+                    <p class="emergency-description">Botón de emergencia presionado</p>
+                    <div class="emergency-meta">
+                        <span class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            Hace 5 min
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            Av. Tupac Amaru 210, Los Olivos
+                        </span>
+                    </div>
+                </div>
+                <div class="emergency-actions">
+                    <button class="btn-primary">Atender</button>
+                    <button class="btn-secondary">📞 Llamar</button>
+                </div>
+            </div>
+
+            <!-- Emergencia 2 - En Proceso -->
+            <div class="emergency-card process-border">
+                <div class="emergency-icon yellow-bg">⚠️</div>
+                <div class="emergency-content">
+                    <div class="emergency-header">
+                        <h3>José Rodríguez Pérez</h3>
+                        <span class="priority-badge process-badge">En Proceso</span>
+                        <span class="priority-level high">Prioridad Alta</span>
+                    </div>
+                    <p class="emergency-description">Posible caída detectada por sensor</p>
+                    <div class="emergency-meta">
+                        <span class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            Hace 15 min
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            Jr. Los Altos 345, Independencia
+                        </span>
+                        <span class="meta-item family-contacted">
+                            <span class="meta-icon">✓</span>
+                            Familia contactada
+                        </span>
+                    </div>
+                </div>
+                <div class="emergency-actions">
+                    <button class="btn-resolve">✓ Resolver</button>
+                </div>
+            </div>
+
+            <!-- Emergencia 3 - En Proceso -->
+            <div class="emergency-card process-border">
+                <div class="emergency-icon orange-bg">💊</div>
+                <div class="emergency-content">
+                    <div class="emergency-header">
+                        <h3>Ana López Torres</h3>
+                        <span class="priority-badge process-badge">En Proceso</span>
+                        <span class="priority-level medium">Prioridad Media</span>
+                    </div>
+                    <p class="emergency-description">No confirmó toma de medicamento importante</p>
+                    <div class="emergency-meta">
+                        <span class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            Hace 30 min
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            Av. Universitaria 567, Comas
+                        </span>
+                        <span class="meta-item family-contacted">
+                            <span class="meta-icon">✓</span>
+                            Familia contactada
+                        </span>
+                    </div>
+                </div>
+                <div class="emergency-actions">
+                    <button class="btn-resolve">✓ Resolver</button>
+                </div>
+            </div>
+
+            <!-- Emergencia 4 - Resuelta -->
+            <div class="emergency-card resolved-border">
+                <div class="emergency-icon red-bg">🔔</div>
+                <div class="emergency-content">
+                    <div class="emergency-header">
+                        <h3>Carlos Pérez Silva</h3>
+                        <span class="priority-badge resolved-badge">Resuelta</span>
+                        <span class="priority-level high">Prioridad Alta</span>
+                    </div>
+                    <p class="emergency-description">Alerta médica - Presión arterial elevada</p>
+                    <div class="emergency-meta">
+                        <span class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            Hace 2 horas
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            Av. Las Palmeras 123, SMP
+                        </span>
+                        <span class="meta-item family-contacted">
+                            <span class="meta-icon">✓</span>
+                            Familia contactada
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergencia 5 - Resuelta -->
+            <div class="emergency-card resolved-border">
+                <div class="emergency-icon pink-bg">💗</div>
+                <div class="emergency-content">
+                    <div class="emergency-header">
+                        <h3>Rosa Martínez Flores</h3>
+                        <span class="priority-badge resolved-badge">Resuelta</span>
+                        <span class="priority-level low">Prioridad Baja</span>
+                    </div>
+                    <p class="emergency-description">Recordatorio de hidratación no atendido</p>
+                    <div class="emergency-meta">
+                        <span class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            Hace 3 horas
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            Jr. Huaraz 789, Los Olivos
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergencia 6 - Cancelada -->
+            <div class="emergency-card resolved-border">
+                <div class="emergency-icon gray-bg">🔔</div>
+                <div class="emergency-content">
+                    <div class="emergency-header">
+                        <h3>Luis Ramírez Díaz</h3>
+                        <span class="priority-badge canceled-badge">Cancelada</span>
+                        <span class="priority-level high">Prioridad Alta</span>
+                    </div>
+                    <p class="emergency-description">Botón de emergencia - Presión accidental</p>
+                    <div class="emergency-meta">
+                        <span class="meta-item">
+                            <span class="meta-icon">⏰</span>
+                            Hace 4 horas
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            Av. Angamos 456, Los Olivos
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">🏛️</div>
+            </div>
+            <div class="footer-section">
+                <h4>Autores</h4>
+                <ul>
+                    <li>Anabel Villanueva Alejandro Sebastián</li>
+                    <li>Rosalía Pobleano Aguirre Zamora</li>
+                    <li>Juan Miguel Tavara Malpartida</li>
+                    <li>Dustin Andrés Farfán Malégue</li>
+                    <li>Dominique Grieko Iphhosme Smith</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Docente</h4>
+                <ul>
+                    <li>Ing. Juan Ricardo Tapia Carbajal</li>
+                    <li>2025</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Institución</h4>
+                <ul>
+                    <li>Universidad Peruana del Norte</li>
+                    <li>Lima Norte, Perú</li>
+                    <li>2025</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores
+        </div>
+    </footer>
+
+    <button class="alert-button">⚠️</button>
+</body>
+</html>

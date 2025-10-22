@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Medicamentos - Panel Administrador</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="stylesheet" href="../assets/css/admin/MedicamentosAdmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Nav -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <i class="fa-solid fa-table-cells-large"></i>
+            </div>
+            <span class="panel-title">Panel Administrador</span>
+            <span class="panel-subtitle">Abuelos en Red</span>
+        </div>
+        <nav class="navbar-nav">
+            <a href="#"><i class="fa-solid fa-table-cells"></i> Dashboard</a>
+            <a href="#"><i class="fa-solid fa-users"></i> Usuarios</a>
+            <a href="#"><i class="fa-solid fa-triangle-exclamation"></i> Emergencias</a>
+            <a href="#" class="active"><i class="fa-solid fa-capsules"></i> Medicamentos</a>
+            <a href="#"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+            <a href="#"><i class="fa-solid fa-gear"></i> Configuración</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section-header">
+            <h2>Gestión de Medicamentos</h2>
+            <p>Administra los medicamentos y recordatorio de los usuarios</p>
+        </section>
+        <section class="overview-cards">
+            <div class="overview-card">
+                <div class="overview-value">4</div>
+                <div class="overview-label">Medicamentos Activos</div>
+                <div class="overview-icon success"><i class="fa-solid fa-capsules"></i></div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-value">1</div>
+                <div class="overview-label">Pausados</div>
+                <div class="overview-icon warning"><i class="fa-solid fa-pause"></i></div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-value">90%</div>
+                <div class="overview-label">Adherencia Promedio</div>
+                <div class="overview-icon info"><i class="fa-solid fa-percent"></i></div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-label">Calendario</div>
+                <div class="overview-icon calendar"><i class="fa-solid fa-calendar"></i></div>
+            </div>
+        </section>
+        <section class="search-filter">
+            <input type="text" class="search-input" placeholder="🔍 Buscar por medicamento o usuario...">
+            <div class="filter-buttons">
+                <button class="filter active">Todos</button>
+                <button class="filter">Activos</button>
+                <button class="filter">Pausados</button>
+                <button class="add-medicine"><i class="fa-solid fa-plus"></i> Agregar</button>
+            </div>
+        </section>
+        <section class="medicamentos-grid">
+            <!-- Medicamento Card 1 -->
+            <div class="medicamento-card">
+                <div class="card-header">
+                    <span class="med-name">Losartán 50mg</span>
+                    <span class="status active">Activo</span>
+                </div>
+                <div class="card-subheader">A: Karla González Ruiz</div>
+                <div class="card-details">
+                    <div class="row">
+                        <div><strong>Dosis</strong><br>1 tableta</div>
+                        <div><strong>Frecuencia</strong><br>Cada 24 horas</div>
+                        <div><a class="card-link" href="#">Horarios</a></div>
+                    </div>
+                    <div class="row">
+                        <div><strong>Notas</strong><br>Tomar con el desayuno</div>
+                    </div>
+                    <div class="adherencia-bar">
+                        <span>Adherencia</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 95%; background: #34d399;"></div>
+                        </div>
+                        <span class="percent">95%</span>
+                    </div>
+                    <div class="row bottom">
+                        <span class="last-dose">Última toma: Hoy 08:05</span>
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Medicamento Card 2 -->
+            <div class="medicamento-card">
+                <div class="card-header">
+                    <span class="med-name">Metformina 850mg</span>
+                    <span class="status active">Activo</span>
+                </div>
+                <div class="card-subheader">A: Mario González Ruiz</div>
+                <div class="card-details">
+                    <div class="row">
+                        <div><strong>Dosis</strong><br>1 tableta</div>
+                        <div><strong>Frecuencia</strong><br>Cada 12 horas</div>
+                        <div><a class="card-link" href="#">Horarios <span class="pill">2</span></a></div>
+                    </div>
+                    <div class="row">
+                        <div><strong>Notas</strong><br>Tomar con las comidas</div>
+                    </div>
+                    <div class="adherencia-bar">
+                        <span>Adherencia</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 92%; background: #34d399;"></div>
+                        </div>
+                        <span class="percent">92%</span>
+                    </div>
+                    <div class="row bottom">
+                        <span class="last-dose">Última toma: Hoy 08:10</span>
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Medicamento Card 3 -->
+            <div class="medicamento-card">
+                <div class="card-header">
+                    <span class="med-name">Aspirina 100mg</span>
+                    <span class="status active">Activo</span>
+                </div>
+                <div class="card-subheader">A: Karla González Ruiz</div>
+                <div class="card-details">
+                    <div class="row">
+                        <div><strong>Dosis</strong><br>1 tableta</div>
+                        <div><strong>Frecuencia</strong><br>Cada 24 horas</div>
+                        <div><a class="card-link" href="#">Horarios</a></div>
+                    </div>
+                    <div class="row">
+                        <div><strong>Notas</strong><br>Tomar después de la cena</div>
+                    </div>
+                    <div class="adherencia-bar">
+                        <span>Adherencia</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%; background: #fbbf24;"></div>
+                        </div>
+                        <span class="percent">80%</span>
+                    </div>
+                    <div class="row bottom">
+                        <span class="last-dose">Última toma: Ayer 21:15</span>
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Medicamento Card 4 -->
+            <div class="medicamento-card">
+                <div class="card-header">
+                    <span class="med-name">Atorvastatina 20mg</span>
+                    <span class="status active">Activo</span>
+                </div>
+                <div class="card-subheader">A: Ana Rodríguez Pérez</div>
+                <div class="card-details">
+                    <div class="row">
+                        <div><strong>Dosis</strong><br>1 tableta</div>
+                        <div><strong>Frecuencia</strong><br>Cada 24 horas</div>
+                        <div><a class="card-link" href="#">Horarios</a></div>
+                    </div>
+                    <div class="row">
+                        <div><strong>Notas</strong><br>Tomar antes de dormir</div>
+                    </div>
+                    <div class="adherencia-bar">
+                        <span>Adherencia</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%; background: #34d399;"></div>
+                        </div>
+                        <span class="percent">100%</span>
+                    </div>
+                    <div class="row bottom">
+                        <span class="last-dose">Última toma: Ayer 22:00</span>
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Medicamento Card 5 -->
+            <div class="medicamento-card">
+                <div class="card-header">
+                    <span class="med-name">Aspirina 100mg</span>
+                    <span class="status active">Activo</span>
+                </div>
+                <div class="card-subheader">A: José Rodríguez Pérez</div>
+                <div class="card-details">
+                    <div class="row">
+                        <div><strong>Dosis</strong><br>1 tableta</div>
+                        <div><strong>Frecuencia</strong><br>Cada 24 horas</div>
+                        <div><a class="card-link" href="#">Horarios</a></div>
+                    </div>
+                    <div class="row">
+                        <div><strong>Notas</strong><br>Tomar después de la cena</div>
+                    </div>
+                    <div class="adherencia-bar">
+                        <span>Adherencia</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%; background: #fbbf24;"></div>
+                        </div>
+                        <span class="percent">80%</span>
+                    </div>
+                    <div class="row bottom">
+                        <span class="last-dose">Última toma: Ayer 21:15</span>
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Medicamento Card 6 -->
+            <div class="medicamento-card paused">
+                <div class="card-header">
+                    <span class="med-name">Paracetamol 500mg</span>
+                    <span class="status paused">Pausado</span>
+                </div>
+                <div class="card-subheader">A: Carlos Pérez Silva</div>
+                <div class="card-details">
+                    <div class="row">
+                        <div><strong>Dosis</strong><br>1 tableta</div>
+                        <div><strong>Frecuencia</strong><br>Cada 8 horas si hay dolor</div>
+                        <div><a class="card-link" href="#">Horarios <span class="pill">3</span></a></div>
+                    </div>
+                    <div class="row">
+                        <div><strong>Notas</strong><br>Solo si hay dolor o fiebre</div>
+                    </div>
+                    <div class="adherencia-bar">
+                        <span>Adherencia</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 77%; background: #fbbf24;"></div>
+                        </div>
+                        <span class="percent">77%</span>
+                    </div>
+                    <div class="row bottom">
+                        <span class="last-dose">Última toma: Hace 2 días</span>
+                        <button class="edit"><i class="fa-solid fa-pen"></i> Editar</button>
+                        <button class="delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <div class="footer-logo">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+        </div>
+        <div class="footer-center">
+            <div class="footer-section">
+                <h4>Autores</h4>
+                <ul>
+                    <li>Javier Villanueva Salazar</li>
+                    <li>Andrea Escobar</li>
+                    <li>Mariana Méndez Hernández</li>
+                    <li>Saúl Feliciano</li>
+                    <li>Miguel Ángel Sánchez</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Docente</h4>
+                <ul>
+                    <li>Ing. Juan Manuel Tejeda Cofiadl</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Universidad Autónoma del Estado de Hidalgo</h4>
+                <ul>
+                    <li>Área Académica de Computación y Electrónica</li>
+                    <li>LIC. TIC</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores
+        </div>
+    </footer>
+</body>
+</html>
