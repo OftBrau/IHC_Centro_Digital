@@ -15,13 +15,15 @@
                 <p>Abuelos en Red</p>
             </div>
         </div>
-        <nav class="nav-menu">
-            <button class="nav-btn">📊 Dashboard</button>
-            <button class="nav-btn active">👥 Usuarios</button>
-            <button class="nav-btn">⚠️ Emergencias</button>
-            <button class="nav-btn">💊 Medicamentos</button>
-            <button class="nav-btn">📈 Reportes</button>
-            <button class="nav-btn">⚙️ Configuración</button>
+
+        <nav class="nav-menu" role="navigation" aria-label="Menú principal administrador">
+            <!-- Nav buttons with explicit data-targets; last button is logout -->
+            <button class="nav-btn" type="button" data-target="DashboardsAdmin.html">📊 Dashboard</button>
+            <button class="nav-btn active" type="button" data-target="usuarioAdmin.html" aria-current="page">👥 Usuarios</button>
+            <button class="nav-btn" type="button" data-target="EmergenciasAdmin.html">⚠️ Emergencias</button>
+            <button class="nav-btn" type="button" data-target="MedicamentosAdmin.html">💊 Medicamentos</button>
+            <button class="nav-btn" type="button" data-target="ReportesAdmin.html">📈 Reportes</button>
+            <button class="nav-btn" type="button" data-logout="true">X Salir</button>
         </nav>
     </header>
 
@@ -34,7 +36,7 @@
                 <span class="search-icon">🔍</span>
                 <input type="text" placeholder="Buscar por nombre, email o teléfono...">
             </div>
-            <button class="add-user-btn">
+            <button class="add-user-btn" type="button">
                 <span>➕</span>
                 Agregar Usuario
             </button>
@@ -80,8 +82,8 @@
                     </div>
                 </div>
                 <div class="user-actions">
-                    <button class="btn-details">📋 Ver Detalles</button>
-                    <button class="btn-delete">🗑️</button>
+                    <button class="btn-details" type="button">📋 Ver Detalles</button>
+                    <button class="btn-delete" type="button">🗑️</button>
                 </div>
             </div>
 
@@ -124,8 +126,8 @@
                     </div>
                 </div>
                 <div class="user-actions">
-                    <button class="btn-details">📋 Ver Detalles</button>
-                    <button class="btn-delete">🗑️</button>
+                    <button class="btn-details" type="button">📋 Ver Detalles</button>
+                    <button class="btn-delete" type="button">🗑️</button>
                 </div>
             </div>
 
@@ -168,8 +170,8 @@
                     </div>
                 </div>
                 <div class="user-actions">
-                    <button class="btn-details">📋 Ver Detalles</button>
-                    <button class="btn-delete">🗑️</button>
+                    <button class="btn-details" type="button">📋 Ver Detalles</button>
+                    <button class="btn-delete" type="button">🗑️</button>
                 </div>
             </div>
 
@@ -212,8 +214,8 @@
                     </div>
                 </div>
                 <div class="user-actions">
-                    <button class="btn-details">📋 Ver Detalles</button>
-                    <button class="btn-delete">🗑️</button>
+                    <button class="btn-details" type="button">📋 Ver Detalles</button>
+                    <button class="btn-delete" type="button">🗑️</button>
                 </div>
             </div>
 
@@ -256,8 +258,8 @@
                     </div>
                 </div>
                 <div class="user-actions">
-                    <button class="btn-details">📋 Ver Detalles</button>
-                    <button class="btn-delete">🗑️</button>
+                    <button class="btn-details" type="button">📋 Ver Detalles</button>
+                    <button class="btn-delete" type="button">🗑️</button>
                 </div>
             </div>
         </div>
@@ -299,6 +301,9 @@
         </div>
     </footer>
 
-    <button class="alert-button">⚠️</button>
+    <button class="alert-button" type="button">⚠️</button>
+
+    <!-- admin navigation handler -->
+    <script src="../assets/js/admin/admin-nav.js"></script>
 </body>
 </html>

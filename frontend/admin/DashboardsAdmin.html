@@ -1,292 +1,299 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Administrador - Abuelos en Red</title>
-    <link rel="stylesheet" href="../assets/css/admin/DashboardsAdmin.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo-section">
-            <div class="logo">🏛️</div>
-            <div class="logo-text">
-                <h1>Panel Administrador</h1>
-                <p>Abuelos en Red</p>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panel Administrador - Abuelos en Red</title>
+        <link rel="stylesheet" href="../assets/css/admin/DashboardsAdmin.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">🏛️</div>
+                <div class="logo-text">
+                    <h1>Panel Administrador</h1>
+                    <p>Abuelos en Red</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu" role="navigation" aria-label="Menú principal administrador">
+                <!-- Added data-target attributes (files expected to exist in same folder) -->
+                <button class="nav-btn active" type="button" data-target="DashboardsAdmin.html">📊 Dashboard</button>
+                <button class="nav-btn" type="button" data-target="usuarioAdmin.html">👥 Usuarios</button>
+                <button class="nav-btn" type="button" data-target="EmergenciasAdmin.html">⚠️ Emergencias</button>
+                <button class="nav-btn" type="button" data-target="MedicamentosAdmin.html">💊 Medicamentos</button>
+                <button class="nav-btn" type="button" data-target="ReportesAdmin.html">📈 Reportes</button>
+                <button class="nav-btn" type="button" data-target="ReportesAdmin.html">X Salir</button>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h1 class="page-title">Dashboard General</h1>
+            <p class="page-subtitle">Resumen de actividad del sistema</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Usuarios Activos</h3>
+                        <div class="number">248</div>
+                        <div class="change positive">
+                            <span>↑</span>
+                            <span>+12% vs. semana anterior</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon icon-blue">👥</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Alertas Hoy</h3>
+                        <div class="number">5</div>
+                        <div class="change negative">
+                            <span>↓</span>
+                            <span>-3% vs. semana anterior</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon icon-red">🔔</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Medicamentos Activos</h3>
+                        <div class="number">1,234</div>
+                        <div class="change positive">
+                            <span>↑</span>
+                            <span>+8% vs. semana anterior</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon icon-green">💊</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Actividad Diaria</h3>
+                        <div class="number">87%</div>
+                        <div class="change positive">
+                            <span>↑</span>
+                            <span>+9% vs. semana anterior</span>
+                        </div>
+                    </div>
+                    <div class="stat-icon icon-purple">📈</div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Actividad Semanal</h3>
+                    <div class="line-chart">
+                        <svg width="100%" height="100%" viewBox="0 0 400 200" role="img" aria-label="Gráfico de actividad semanal">
+                            <!-- Grid lines -->
+                            <line x1="40" y1="0" x2="40" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="40" y1="160" x2="400" y2="160" stroke="#e0e0e0" stroke-width="1"/>
+                            
+                            <!-- Y-axis labels -->
+                            <text x="10" y="10" font-size="10" fill="#999">240</text>
+                            <text x="10" y="50" font-size="10" fill="#999">180</text>
+                            <text x="10" y="90" font-size="10" fill="#999">120</text>
+                            <text x="10" y="130" font-size="10" fill="#999">60</text>
+                            <text x="20" y="170" font-size="10" fill="#999">0</text>
+                            
+                            <!-- X-axis labels -->
+                            <text x="50" y="180" font-size="11" fill="#666">Lun</text>
+                            <text x="100" y="180" font-size="11" fill="#666">Mar</text>
+                            <text x="150" y="180" font-size="11" fill="#666">Mié</text>
+                            <text x="200" y="180" font-size="11" fill="#666">Jue</text>
+                            <text x="250" y="180" font-size="11" fill="#666">Vie</text>
+                            <text x="300" y="180" font-size="11" fill="#666">Sáb</text>
+                            <text x="350" y="180" font-size="11" fill="#666">Dom</text>
+                            
+                            <!-- Blue line (Usuarios Activos) -->
+                            <polyline points="60,50 110,40 160,45 210,35 260,30 310,50 360,55" 
+                                    fill="none" stroke="#4A90E2" stroke-width="2"/>
+                            
+                            <!-- Green line (Medicamentos Tomados) -->
+                            <polyline points="60,80 110,75 160,70 210,65 260,80 310,90 360,95" 
+                                    fill="none" stroke="#4CAF50" stroke-width="2"/>
+                            
+                            <!-- Red line (Alertas) -->
+                            <polyline points="60,155 110,153 160,154 210,152 260,155 310,154 360,156" 
+                                    fill="none" stroke="#F44336" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #F44336;"></div>
+                            <span>Alertas</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #4CAF50;"></div>
+                            <span>Medicamentos Tomados</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #4A90E2;"></div>
+                            <span>Usuarios Activos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-title">Distribución por Edad</h3>
+                    <div class="pie-chart">
+                        <svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Distribución por edad">
+                            <circle cx="100" cy="100" r="80" fill="#5B9BD5" stroke="white" stroke-width="2"/>
+                            <path d="M 100 100 L 100 20 A 80 80 0 0 1 148 36 Z" fill="#4CAF50" stroke="white" stroke-width="2"/>
+                            <path d="M 100 100 L 148 36 A 80 80 0 0 1 164 68 Z" fill="#F44336" stroke="white" stroke-width="2"/>
+                            <path d="M 100 100 L 164 68 A 80 80 0 0 1 173 105 Z" fill="#9C27B0" stroke="white" stroke-width="2"/>
+                            <path d="M 100 100 L 173 105 A 80 80 0 0 1 150 165 Z" fill="#FFC107" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="pie-legend-item">
+                            <div class="pie-legend-color" style="background: #5B9BD5;"></div>
+                            <span>60-65: 45%</span>
+                        </div>
+                        <div class="pie-legend-item">
+                            <div class="pie-legend-color" style="background: #4CAF50;"></div>
+                            <span>66-70: 68%</span>
+                        </div>
+                        <div class="pie-legend-item">
+                            <div class="pie-legend-color" style="background: #F44336;"></div>
+                            <span>80+: 15%</span>
+                        </div>
+                        <div class="pie-legend-item">
+                            <div class="pie-legend-color" style="background: #9C27B0;"></div>
+                            <span>76-80: 38%</span>
+                        </div>
+                        <div class="pie-legend-item">
+                            <div class="pie-legend-color" style="background: #FFC107;"></div>
+                            <span>71-75: 62%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Medicamentos Más Comunes</h3>
+                    <div class="bar-chart">
+                        <div class="bar-item">
+                            <div class="bar-label">Losartán</div>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label">Metformina</div>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label">Aspirina</div>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label">Atorvastatina</div>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-label">Omeprazol</div>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alerts-card">
+                    <h3 class="chart-title">⏰ Alertas Recientes</h3>
+                    <div class="alert-item">
+                        <div class="alert-info">
+                            <div class="alert-indicator green"></div>
+                            <div class="alert-details">
+                                <h4>María González</h4>
+                                <p>Emergencia • Hace 15 min</p>
+                            </div>
+                        </div>
+                        <div class="alert-badge badge-green">Atendida</div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-info">
+                            <div class="alert-indicator yellow"></div>
+                            <div class="alert-details">
+                                <h4>José Rodríguez</h4>
+                                <p>Medicamento • Hace 1 hora</p>
+                            </div>
+                        </div>
+                        <div class="alert-badge badge-yellow">Pendiente</div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-info">
+                            <div class="alert-indicator green"></div>
+                            <div class="alert-details">
+                                <h4>Ana López</h4>
+                                <p>Caída • Hace 2 horas</p>
+                            </div>
+                        </div>
+                        <div class="alert-badge badge-green">Atendida</div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-info">
+                            <div class="alert-indicator green"></div>
+                            <div class="alert-details">
+                                <h4>Carlos Pérez</h4>
+                                <p>Emergencia • Hace 3 horas</p>
+                            </div>
+                        </div>
+                        <div class="alert-badge badge-green">Atendida</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <nav class="nav-menu">
-            <button class="nav-btn active">📊 Dashboard</button>
-            <button class="nav-btn">👥 Usuarios</button>
-            <button class="nav-btn">⚠️ Emergencias</button>
-            <button class="nav-btn">💊 Medicamentos</button>
-            <button class="nav-btn">📈 Reportes</button>
-        </nav>
-    </header>
 
-    <div class="container">
-        <h1 class="page-title">Dashboard General</h1>
-        <p class="page-subtitle">Resumen de actividad del sistema</p>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">🏛️</div>
+                </div>
+                <div class="footer-section">
+                    <h4>Autores</h4>
+                    <ul>
+                        <li>Anabel Villanueva Alejandro Sebastián</li>
+                        <li>Rosalía Pobleano Aguirre Zamora</li>
+                        <li>Juan Miguel Tavara Malpartida</li>
+                        <li>Dustin Andrés Farfán Malégue</li>
+                        <li>Dominique Grieko Iphhosme Smith</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Docente</h4>
+                    <ul>
+                        <li>Ing. Juan Ricardo Tapia Carbajal</li>
+                        <li>2025</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Institución</h4>
+                    <ul>
+                        <li>Universidad Peruana del Norte</li>
+                        <li>Lima Norte, Perú</li>
+                        <li>2025</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores
+            </div>
+        </footer>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>Usuarios Activos</h3>
-                    <div class="number">248</div>
-                    <div class="change positive">
-                        <span>↑</span>
-                        <span>+12% vs. semana anterior</span>
-                    </div>
-                </div>
-                <div class="stat-icon icon-blue">👥</div>
-            </div>
+        <button class="alert-button">⚠️</button>
 
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>Alertas Hoy</h3>
-                    <div class="number">5</div>
-                    <div class="change negative">
-                        <span>↓</span>
-                        <span>-3% vs. semana anterior</span>
-                    </div>
-                </div>
-                <div class="stat-icon icon-red">🔔</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>Medicamentos Activos</h3>
-                    <div class="number">1,234</div>
-                    <div class="change positive">
-                        <span>↑</span>
-                        <span>+8% vs. semana anterior</span>
-                    </div>
-                </div>
-                <div class="stat-icon icon-green">💊</div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-info">
-                    <h3>Actividad Diaria</h3>
-                    <div class="number">87%</div>
-                    <div class="change positive">
-                        <span>↑</span>
-                        <span>+9% vs. semana anterior</span>
-                    </div>
-                </div>
-                <div class="stat-icon icon-purple">📈</div>
-            </div>
-        </div>
-
-        <div class="charts-grid">
-            <div class="chart-card">
-                <h3 class="chart-title">Actividad Semanal</h3>
-                <div class="line-chart">
-                    <svg width="100%" height="100%" viewBox="0 0 400 200">
-                        <!-- Grid lines -->
-                        <line x1="40" y1="0" x2="40" y2="160" stroke="#e0e0e0" stroke-width="1"/>
-                        <line x1="40" y1="160" x2="400" y2="160" stroke="#e0e0e0" stroke-width="1"/>
-                        
-                        <!-- Y-axis labels -->
-                        <text x="10" y="10" font-size="10" fill="#999">240</text>
-                        <text x="10" y="50" font-size="10" fill="#999">180</text>
-                        <text x="10" y="90" font-size="10" fill="#999">120</text>
-                        <text x="10" y="130" font-size="10" fill="#999">60</text>
-                        <text x="20" y="170" font-size="10" fill="#999">0</text>
-                        
-                        <!-- X-axis labels -->
-                        <text x="50" y="180" font-size="11" fill="#666">Lun</text>
-                        <text x="100" y="180" font-size="11" fill="#666">Mar</text>
-                        <text x="150" y="180" font-size="11" fill="#666">Mié</text>
-                        <text x="200" y="180" font-size="11" fill="#666">Jue</text>
-                        <text x="250" y="180" font-size="11" fill="#666">Vie</text>
-                        <text x="300" y="180" font-size="11" fill="#666">Sáb</text>
-                        <text x="350" y="180" font-size="11" fill="#666">Dom</text>
-                        
-                        <!-- Blue line (Usuarios Activos) -->
-                        <polyline points="60,50 110,40 160,45 210,35 260,30 310,50 360,55" 
-                                  fill="none" stroke="#4A90E2" stroke-width="2"/>
-                        
-                        <!-- Green line (Medicamentos Tomados) -->
-                        <polyline points="60,80 110,75 160,70 210,65 260,80 310,90 360,95" 
-                                  fill="none" stroke="#4CAF50" stroke-width="2"/>
-                        
-                        <!-- Red line (Alertas) -->
-                        <polyline points="60,155 110,153 160,154 210,152 260,155 310,154 360,156" 
-                                  fill="none" stroke="#F44336" stroke-width="2"/>
-                    </svg>
-                </div>
-                <div class="chart-legend">
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #F44336;"></div>
-                        <span>Alertas</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #4CAF50;"></div>
-                        <span>Medicamentos Tomados</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background: #4A90E2;"></div>
-                        <span>Usuarios Activos</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chart-card">
-                <h3 class="chart-title">Distribución por Edad</h3>
-                <div class="pie-chart">
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="80" fill="#5B9BD5" stroke="white" stroke-width="2"/>
-                        <path d="M 100 100 L 100 20 A 80 80 0 0 1 148 36 Z" fill="#4CAF50" stroke="white" stroke-width="2"/>
-                        <path d="M 100 100 L 148 36 A 80 80 0 0 1 164 68 Z" fill="#F44336" stroke="white" stroke-width="2"/>
-                        <path d="M 100 100 L 164 68 A 80 80 0 0 1 173 105 Z" fill="#9C27B0" stroke="white" stroke-width="2"/>
-                        <path d="M 100 100 L 173 105 A 80 80 0 0 1 150 165 Z" fill="#FFC107" stroke="white" stroke-width="2"/>
-                    </svg>
-                </div>
-                <div class="pie-legend">
-                    <div class="pie-legend-item">
-                        <div class="pie-legend-color" style="background: #5B9BD5;"></div>
-                        <span>60-65: 45%</span>
-                    </div>
-                    <div class="pie-legend-item">
-                        <div class="pie-legend-color" style="background: #4CAF50;"></div>
-                        <span>66-70: 68%</span>
-                    </div>
-                    <div class="pie-legend-item">
-                        <div class="pie-legend-color" style="background: #F44336;"></div>
-                        <span>80+: 15%</span>
-                    </div>
-                    <div class="pie-legend-item">
-                        <div class="pie-legend-color" style="background: #9C27B0;"></div>
-                        <span>76-80: 38%</span>
-                    </div>
-                    <div class="pie-legend-item">
-                        <div class="pie-legend-color" style="background: #FFC107;"></div>
-                        <span>71-75: 62%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="charts-grid">
-            <div class="chart-card">
-                <h3 class="chart-title">Medicamentos Más Comunes</h3>
-                <div class="bar-chart">
-                    <div class="bar-item">
-                        <div class="bar-label">Losartán</div>
-                        <div class="bar-container">
-                            <div class="bar-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar-label">Metformina</div>
-                        <div class="bar-container">
-                            <div class="bar-fill" style="width: 75%;"></div>
-                        </div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar-label">Aspirina</div>
-                        <div class="bar-container">
-                            <div class="bar-fill" style="width: 65%;"></div>
-                        </div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar-label">Atorvastatina</div>
-                        <div class="bar-container">
-                            <div class="bar-fill" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                    <div class="bar-item">
-                        <div class="bar-label">Omeprazol</div>
-                        <div class="bar-container">
-                            <div class="bar-fill" style="width: 45%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="alerts-card">
-                <h3 class="chart-title">⏰ Alertas Recientes</h3>
-                <div class="alert-item">
-                    <div class="alert-info">
-                        <div class="alert-indicator green"></div>
-                        <div class="alert-details">
-                            <h4>María González</h4>
-                            <p>Emergencia • Hace 15 min</p>
-                        </div>
-                    </div>
-                    <div class="alert-badge badge-green">Atendida</div>
-                </div>
-                <div class="alert-item">
-                    <div class="alert-info">
-                        <div class="alert-indicator yellow"></div>
-                        <div class="alert-details">
-                            <h4>José Rodríguez</h4>
-                            <p>Medicamento • Hace 1 hora</p>
-                        </div>
-                    </div>
-                    <div class="alert-badge badge-yellow">Pendiente</div>
-                </div>
-                <div class="alert-item">
-                    <div class="alert-info">
-                        <div class="alert-indicator green"></div>
-                        <div class="alert-details">
-                            <h4>Ana López</h4>
-                            <p>Caída • Hace 2 horas</p>
-                        </div>
-                    </div>
-                    <div class="alert-badge badge-green">Atendida</div>
-                </div>
-                <div class="alert-item">
-                    <div class="alert-info">
-                        <div class="alert-indicator green"></div>
-                        <div class="alert-details">
-                            <h4>Carlos Pérez</h4>
-                            <p>Emergencia • Hace 3 horas</p>
-                        </div>
-                    </div>
-                    <div class="alert-badge badge-green">Atendida</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">🏛️</div>
-            </div>
-            <div class="footer-section">
-                <h4>Autores</h4>
-                <ul>
-                    <li>Anabel Villanueva Alejandro Sebastián</li>
-                    <li>Rosalía Pobleano Aguirre Zamora</li>
-                    <li>Juan Miguel Tavara Malpartida</li>
-                    <li>Dustin Andrés Farfán Malégue</li>
-                    <li>Dominique Grieko Iphhosme Smith</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Docente</h4>
-                <ul>
-                    <li>Ing. Juan Ricardo Tapia Carbajal</li>
-                    <li>2025</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Institución</h4>
-                <ul>
-                    <li>Universidad Peruana del Norte</li>
-                    <li>Lima Norte, Perú</li>
-                    <li>2025</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            © 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores
-        </div>
-    </footer>
-
-    <button class="alert-button">⚠️</button>
-</body>
-</html>
+        <!-- Scripts: primero homePublic (si existe) luego el manejador de navegación admin -->
+        <script src="../assets/js/homePublic.js"></script>
+        <script src="../assets/js/admin/admin-nav.js"></script>
+    </body>
+    </html>

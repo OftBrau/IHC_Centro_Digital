@@ -1,13 +1,3 @@
-/**
- * frontend/assets/js/login.js
- * Lógica vanilla para login + register (simulado, usa localStorage).
- *
- * Añadida redirección automática según rol:
- *  - admin  -> ../admin/HomeAdmin.html  (asumiendo que login.html está en /public/)
- *  - client -> HomePublic.html          (asumiendo que login.html está en /public/)
- *
- * Si tus archivos HTML están en otras rutas, ajusta las constantes REDIRECTS abajo.
- */
 
 (function () {
   // Nueva key y legacy keys
@@ -17,7 +7,7 @@
 
   // Rutas de redirección (ajusta si tu estructura difiere)
   const REDIRECTS = {
-    admin: "../admin/HomeAdmin.html",  // desde frontend/public/login.html -> ../admin/HomeAdmin.html
+    admin: "../admin/DashboardsAdmin.html",  // desde frontend/public/login.html -> ../admin/DashboardsAdmin.html
     client: "HomePublic.html"         // desde frontend/public/login.html -> HomePublic.html (misma carpeta public/)
   };
 
@@ -233,9 +223,9 @@
         const found = users.find(u => (u.email === user || (u.name && u.name.toLowerCase() === user)) && u.password === password && u.role === "admin");
         if (found || (user === "admin" && password === "admin1")) {
           showSnackbar("Bienvenido, Admin!", { type: "success" });
-          // adminLoginForm suele estar en admin/login.html, por eso redirigimos a HomeAdmin.html (misma carpeta)
+          // adminLoginForm suele estar en admin/login.html, por eso redirigimos a DashboardsAdmin.html (misma carpeta)
           setTimeout(() => {
-            window.location.href = "HomeAdmin.html";
+            window.location.href = "DashboardsAdmin.html";
           }, 600);
         } else {
           showSnackbar("Credenciales de admin incorrectas.", { type: "error" });
