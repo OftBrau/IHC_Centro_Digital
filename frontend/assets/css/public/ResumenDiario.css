@@ -1,0 +1,7 @@
+/* ResumenDiario.css
+   Estilos específicos para ResumenDiario.html
+*/
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:#ffffff; color:#111827; }
+.container { max-width:980px; margin:1.8rem auto; padding:1rem; }
+.summary-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+.summary-card { background:#f9fafb; padding:1rem; border-radius:8px; border:1px solid #eef2f7; }

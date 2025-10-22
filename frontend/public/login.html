@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ComuniRed — Login</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/login.css">
+
+  <!-- Bootstrap optional (keeps layout nicer, but CSS works without it) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-left" aria-hidden="true">
+      <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761100859/imagen_2025-10-21_214053059_iqikzi.png" alt="Imagen lateral" />
+    </div>
+
+    <div class="login-form">
+      <form id="loginForm" autocomplete="off" novalidate>
+        <h2>AbueloEnLinea</h2>
+        <p>La salud mental es importante    </p>
+
+        <label for="email">Usuario</label>
+        <input id="email" type="email" name="email" required autocomplete="off" />
+
+        <label for="password">Contraseña</label>
+        <input id="password" type="password" name="password" required autocomplete="off" />
+
+        <div class="login-options">
+          <a href="#" id="forgotPassword">¿Olvidaste tu contraseña?</a>
+          <a href="register.html" id="goRegister">Regístrate</a>
+        </div>
+
+        <button id="submitBtn" type="submit" class="btn">
+          <span class="btn-text">Ingresar</span>
+          <span class="btn-loading" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Snackbars -->
+    <div id="snackbar" class="snackbar" aria-live="polite" role="status"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="../assets/js/login.js"></script>
+  <!-- Bootstrap JS optional -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
