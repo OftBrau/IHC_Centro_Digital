@@ -7,8 +7,10 @@
 
   // Rutas de redirección (ajusta si tu estructura difiere)
   const REDIRECTS = {
-    admin: "../admin/DashboardsAdmin.html",  // desde frontend/public/login.html -> ../admin/Dashboard.html
+    admin: "../admin/DashboardsAdmin.html",
+    client: "../public/HomePublic.html" // <-- AJUSTA esta ruta si tu página pública se llama diferente
   };
+
 
   // --- Helpers storage ---
   function loadUsers(key = STORAGE_KEY) {
