@@ -7,7 +7,7 @@
 
   // Rutas de redirección (ajusta si tu estructura difiere)
   const REDIRECTS = {
-    admin: "../admin/HomeAdmin.html",  // desde frontend/public/login.html -> ../admin/HomeAdmin.html
+    admin: "../admin/DashboardsAdmin.html",  // desde frontend/public/login.html -> ../admin/Dashboard.html
   };
 
   // --- Helpers storage ---
