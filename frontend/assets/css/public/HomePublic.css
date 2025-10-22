@@ -825,7 +825,37 @@ form#accountForm { display:flex; flex-direction:column; gap:12px; }
   font-size:14px;
   color:#111;
 }
+/* Estilos para botón de Salir en header (HomePublic.logout.css) */
+.logout-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, opacity .12s ease;
+  margin-left: 12px;
+  height: 40px;
+  align-self: center;
+}
+.logout-btn:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+.logout-btn:focus {
+  outline: 3px solid rgba(90,166,255,0.18);
+  outline-offset: 2px;
+}
 
+@media (max-width: 768px) {
+  .logout-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+    margin-left: 8px;
+    height: 36px;
+  }
+}
 .password-group { border:0; padding:0; margin:0; }
 .password-group legend { font-weight:700; margin-bottom:6px; color:#123; }
 

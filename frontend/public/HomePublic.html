@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../assets/css/public/HomePublic.css">
   <!-- Pequeñas reglas para iconos por URL -->
   <link rel="stylesheet" href="../assets/css/public/HomePublic.icons.css">
+  <!-- Estilos logout -->
+  <link rel="stylesheet" href="../assets/css/public/HomePublic.logout.css">
   <!-- Fuente Google -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -29,6 +31,9 @@
         <a href="#nosotros" class="nav-link">NOSOTROS</a>
         <a href="#herramientas" class="nav-link">HERRAMIENTAS</a>
       </nav>
+
+      <!-- Botón Salir -->
+      <button id="logoutBtn" class="logout-btn" type="button" aria-label="Cerrar sesión">Salir</button>
     </div>
   </header>
 
@@ -103,13 +108,13 @@
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
-        <button id="accountCard" class="action-card" role="button" aria-label="Cuenta - Abrir ajustes" aria-haspopup="dialog" aria-controls="accountModal" type="button">
+          <button id="accountCard" class="action-card" role="button" aria-label="Cuenta - Abrir ajustes" aria-haspopup="dialog" aria-controls="accountModal" type="button">
             <div class="icon" aria-hidden="true">
               <img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" alt="Cuenta icon">
             </div>
-          <h3>Cuenta</h3>
-          <p>Gestiona tu perfil y ajustes</p>
-        </button>
+            <h3>Cuenta</h3>
+            <p>Gestiona tu perfil y ajustes</p>
+          </button>
         </div>
       </div>
     </section>
@@ -288,6 +293,7 @@
 
   <!-- Scripts -->
   <script src="../assets/js/homePublic.js"></script>
+  <script src="../assets/js/logout.js"></script>
 
 </body>
 </html>
