@@ -17,7 +17,7 @@
 
   // Rutas de redirección (ajusta si tu estructura difiere)
   const REDIRECTS = {
-    admin: "../admin/HomeAdmin.html",  // desde frontend/public/login.html -> ../admin/HomeAdmin.html
+    admin: "../admin/DashboardsAdmin.html",  // desde frontend/public/login.html -> ../admin/HomeAdmin.html
     client: "HomePublic.html"         // desde frontend/public/login.html -> HomePublic.html (misma carpeta public/)
   };
 
@@ -235,7 +235,7 @@
           showSnackbar("Bienvenido, Admin!", { type: "success" });
           // adminLoginForm suele estar en admin/login.html, por eso redirigimos a HomeAdmin.html (misma carpeta)
           setTimeout(() => {
-            window.location.href = "HomeAdmin.html";
+            window.location.href = "DashboardsAdmin.html";
           }, 600);
         } else {
           showSnackbar("Credenciales de admin incorrectas.", { type: "error" });
