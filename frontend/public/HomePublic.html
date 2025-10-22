@@ -7,7 +7,8 @@
 
   <!-- Estilos principales -->
   <link rel="stylesheet" href="../assets/css/public/HomePublic.css">
-
+  <!-- Pequeñas reglas para iconos por URL -->
+  <link rel="stylesheet" href="../assets/css/public/HomePublic.icons.css">
   <!-- Fuente Google -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -63,40 +64,52 @@
 
         <div class="cards-grid" role="list">
           <button class="action-card" data-target="RecordatoriosMedicos.html" role="listitem" aria-label="Recordatorios Medicos">
-            <div class="icon" aria-hidden="true">💊</div>
+            <div class="icon" aria-hidden="true">
+              <img src="https://img.icons8.com/fluency/48/000000/pill.png" alt="Medicamentos icon">
+            </div>
             <h3>Recordatorios Médicos</h3>
             <p>Nunca olvides tus citas y medicamentos</p>
           </button>
 
           <button class="action-card" data-target="SolicitarAyuda.html" role="listitem" aria-label="Solicitar Ayuda">
-            <div class="icon" aria-hidden="true">🤲</div>
+            <div class="icon" aria-hidden="true">
+              <img src="https://img.icons8.com/fluency/48/000000/help.png" alt="Solicitar ayuda icon">
+            </div>
             <h3>Solicitar Ayuda</h3>
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
           <button class="action-card" data-target="ComunicacionConFamiliares.html" role="listitem" aria-label="Comunicacion con Familiares">
-            <div class="icon" aria-hidden="true">💬</div>
+            <div class="icon" aria-hidden="true">
+              <img src="https://img.icons8.com/fluency/48/000000/chat--v1.png" alt="Chat familia icon">
+            </div>
             <h3>Comunicación con Familiares</h3>
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
           <button class="action-card" data-target="BienestarYCompania.html" role="listitem" aria-label="Bienestar y Compañia">
-            <div class="icon" aria-hidden="true">❤️</div>
+            <div class="icon" aria-hidden="true">
+              <img src="https://img.icons8.com/fluency/48/000000/heart-with-pulse.png" alt="Bienestar icon">
+            </div>
             <h3>Bienestar y Compañía</h3>
             <p>Actividades y seguimiento de tu ánimo</p>
           </button>
 
           <button class="action-card" data-target="ResumenDiario.html" role="listitem" aria-label="Resumen Diario">
-            <div class="icon" aria-hidden="true">📝</div>
+            <div class="icon" aria-hidden="true">
+              <img src="https://img.icons8.com/fluency/48/000000/document.png" alt="Resumen icon">
+            </div>
             <h3>Resumen Diario</h3>
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
-          <button class="action-card" data-target="Cuenta.html" role="listitem" aria-label="Cuenta">
-            <div class="icon" aria-hidden="true">👤</div>
-            <h3>Cuenta</h3>
-            <p>Gestiona tu perfil y ajustes</p>
-          </button>
+        <button id="accountCard" class="action-card" role="button" aria-label="Cuenta - Abrir ajustes" aria-haspopup="dialog" aria-controls="accountModal" type="button">
+            <div class="icon" aria-hidden="true">
+              <img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" alt="Cuenta icon">
+            </div>
+          <h3>Cuenta</h3>
+          <p>Gestiona tu perfil y ajustes</p>
+        </button>
         </div>
       </div>
     </section>
@@ -170,7 +183,7 @@
               <p>Esta es tu plataforma de acompañamiento digital. Te guiaremos paso a paso para aprender a usarla.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Toma tu tiempo para aprender cada función</div>
               </div>
             </div>
@@ -183,7 +196,7 @@
               <p>Aquí verás tus próximas citas médicas y recordatorios de medicamentos. Nunca olvidarás tomar tu medicina.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Puedes confirmar tu asistencia con un solo toque</div>
               </div>
             </div>
@@ -196,7 +209,7 @@
               <p>Si necesitas asistencia, presiona el botón rojo grande. Te conectaremos inmediatamente con un voluntario.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Disponible 24/7 para cualquier emergencia</div>
               </div>
             </div>
@@ -209,7 +222,7 @@
               <p>Mantente en contacto con tu familia. Puedes llamar, hacer videollamadas o enviar mensajes fácilmente.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Tus familiares recibirán notificaciones de tus actividades</div>
               </div>
             </div>
@@ -222,7 +235,7 @@
               <p>Registra como te sientes cada dia y realiza actividades recomendadas para tu salud física y mental.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Gana logros completando actividades diarias</div>
               </div>
             </div>
@@ -235,7 +248,7 @@
               <p>Consulta el resumen de tu día y comparte con tu familia.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Resumen diario disponible para revisión</div>
               </div>
             </div>
@@ -248,7 +261,7 @@
               <p>Terminaste el tutorial. Puedes volver a iniciarlo cuando quieras.</p>
 
               <div class="tutorial-tip">
-                <span class="tip-icon">💡</span>
+                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
                 <div class="tip-text">Consejo: Comienza a explorar todas las funciones disponibles</div>
               </div>
             </div>

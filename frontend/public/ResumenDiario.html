@@ -1,15 +1,201 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Resumen Diario</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abuelitos en Red — Resumen Diario</title>
   <link rel="stylesheet" href="../assets/css/public/ResumenDiario.css">
 </head>
-<body data-page="resumen-diario">
-  <main class="container">
-    <h1>Resumen Diario</h1>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="Logo Centro Digital" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">CENTRO DIGITAL</div>
+          <div class="brand-sub">ATENCIÓN · ACOMPAÑAMIENTO · ADULTOS MAYORES</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page container">
+    <a class="back-btn" href="HomePublic.html">« Volver</a>
+
+    <div class="page-header">
+      <h1>Resumen Diario</h1>
+      <div class="page-sub">Martes, 21 De Octubre De 2025</div>
+    </div>
+
+    <!-- Top summary tiles -->
+    <section class="summary-tiles">
+      <div class="tile tile-blue">
+        <div class="tile-icon">💊</div>
+        <h3>Medicamentos</h3>
+        <p class="muted">Tomados hoy</p>
+        <div class="tile-badge">2/3</div>
+      </div>
+
+      <div class="tile tile-green">
+        <div class="tile-icon">📅</div>
+        <h3>Citas Médicas</h3>
+        <p class="muted">Programadas hoy</p>
+        <div class="tile-badge">1</div>
+      </div>
+
+      <div class="tile tile-purple">
+        <div class="tile-icon">⚡</div>
+        <h3>Actividades</h3>
+        <p class="muted">Completadas hoy</p>
+        <div class="tile-badge">4/6</div>
+      </div>
+
+      <div class="tile tile-peach">
+        <div class="tile-icon">👪</div>
+        <h3>Familia</h3>
+        <p class="muted">Interacciones hoy</p>
+        <div class="tile-badge">2</div>
+      </div>
+    </section>
+
+    <section class="layout-grid">
+      <div class="main-col">
+        <h2 class="section-title">Próximas tareas</h2>
+
+        <div class="task-list">
+          <div class="task">
+            <div class="task-left">
+              <div class="task-icon">💊</div>
+              <div>
+                <div class="task-title">Losartán 50mg</div>
+                <div class="task-meta">8:00 PM</div>
+              </div>
+            </div>
+            <div class="task-right">
+              <a class="btn btn-blue" href="#">Ver Detalles</a>
+            </div>
+          </div>
+
+          <div class="task">
+            <div class="task-left">
+              <div class="task-icon">📅</div>
+              <div>
+                <div class="task-title">Cita con Dr. María González</div>
+                <div class="task-meta">Mañana 10:30 AM</div>
+              </div>
+            </div>
+            <div class="task-right">
+              <span class="chip confirmed">Confirmada</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Actividad Reciente</h2>
+        <div class="activity-box">
+          <ul class="activity-list">
+            <li class="activity-item">
+              <div class="a-icon">✅</div>
+              <div class="a-body">
+                <div class="a-title">Medicamento tomado</div>
+                <div class="a-desc">Aspirina 100mg — 8:00 AM</div>
+                <div class="a-time">Hace 6 horas</div>
+              </div>
+            </li>
+
+            <li class="activity-item">
+              <div class="a-icon">❤️</div>
+              <div class="a-body">
+                <div class="a-title">Estado de ánimo registrado</div>
+                <div class="a-desc">Te sientes bien hoy</div>
+                <div class="a-time">Hace 3 horas</div>
+              </div>
+            </li>
+
+            <li class="activity-item">
+              <div class="a-icon">📞</div>
+              <div class="a-body">
+                <div class="a-title">Videollamada familiar</div>
+                <div class="a-desc">Con Ana María — 15 minutos</div>
+                <div class="a-time">Hace 2 horas</div>
+              </div>
+            </li>
+
+            <li class="activity-item">
+              <div class="a-icon">🏃</div>
+              <div class="a-body">
+                <div class="a-title">Ejercicio completado</div>
+                <div class="a-desc">Estiramiento suave — 10 minutos</div>
+                <div class="a-time">Hace 1 hora</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card mood-card">
+          <div class="mood-icon">❤️</div>
+          <h4>Estado de Ánimo</h4>
+          <p class="muted">Hoy te sientes:</p>
+          <div class="mood-pill">Bien</div>
+        </div>
+
+        <div class="card progress-card">
+          <h4>Progreso esta Semana</h4>
+          <div class="bars">
+            <div class="bar-row"><div class="bar-label">Medicamentos</div><div class="bar"><div class="fill" style="width:95%"></div></div><div class="bar-percent">95%</div></div>
+            <div class="bar-row"><div class="bar-label">Actividades</div><div class="bar"><div class="fill" style="width:78%"></div></div><div class="bar-percent">78%</div></div>
+            <div class="bar-row"><div class="bar-label">Familia</div><div class="bar"><div class="fill" style="width:85%"></div></div><div class="bar-percent">85%</div></div>
+            <div class="bar-row"><div class="bar-label">Estado Ánimo</div><div class="bar"><div class="fill" style="width:100%"></div></div><div class="bar-percent">100%</div></div>
+          </div>
+        </div>
+
+        <div class="card achievement">
+          <div class="ach-title">¡Excelente!</div>
+          <p class="muted">Has mejorado un 15% en el cumplimiento de tus medicamentos esta semana.</p>
+          <a class="btn btn-green" href="#">Sigue así</a>
+        </div>
+
+        <div class="card quick-actions">
+          <h4>Acciones Rápidas</h4>
+          <a class="btn btn-blue" href="#">Ver Recordatorios</a>
+          <a class="btn btn-ghost" href="#">Llamar a Familia</a>
+          <a class="btn btn-ghost" href="#">Registrar Estado</a>
+        </div>
+      </aside>
+    </section>
   </main>
-  <script src="../assets/js/main.js"></script>
+
+  <footer class="site-footer dark">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <img src="../assets/img/logo.png" alt="Logo" class="footer-logo">
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Autores</h4>
+          <ul class="small-list">
+            <li>Asmat Villanueva Alejandro Sebastián</li>
+            <li>Braulio Feliciano Aguirre</li>
+            <li>Jhon Ángel Apeza Pariapaza</li>
+            <li>Justin André Estrada Mallqui</li>
+            <li>Domínguez Grados Robinson Smith</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Docente</h4>
+          <p>Ing. Juan Ricardo Tapia Carbajal</p>
+        </div>
+        <div>
+          <h4>Institución</h4>
+          <p>Universidad Privada del Norte<br>Lima Norte, Perú</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+    </div>
+  </footer>
 </body>
 </html>

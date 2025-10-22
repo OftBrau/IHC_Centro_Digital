@@ -1,7 +1,211 @@
-/* BienestarYCompania.css
-   Estilos específicos para BienestarYCompania.html
+/* WellnessDashboard.css
+   HTML/CSS for "Bienestar y Compañía" dashboard (Figma-inspired)
+   - responsive two-column layout
+   - hero banner, mood selector, reminders, activities, sidebar and footer
 */
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:#fff; color:#0f172a; }
-.container { max-width:920px; margin:2rem auto; padding:1rem; }
-.card-wellness { padding:1rem; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0; }
-.card-wellness h2 { color:#0ea5a4; }
+
+/* Variables */
+:root{
+  --bg: #fbf6f2;
+  --container: 1180px;
+  --muted: #6b6b6b;
+  --accent: #1976d2;
+  --blue: #2f78b7;
+  --green: #3aa06a;
+  --purple: #7a5bd8;
+  --card-bg: #ffffff;
+  --soft-shadow: 0 12px 30px rgba(12,20,40,0.06);
+  --soft-shadow-2: 0 6px 18px rgba(12,20,40,0.04);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* Reset/base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--container);margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{background:#bfbfbf;border-bottom:1px solid rgba(0,0,0,0.06)}
+.header-top{display:flex;align-items:center;gap:16px;padding:12px 24px}
+.logo{width:86px;height:auto;object-fit:contain}
+.brand-text{color:#fff}
+.brand-name{font-weight:800}
+.brand-sub{font-size:12px;opacity:0.9}
+
+/* back */
+.back-btn{display:inline-block;margin:12px 0;background:#f0ece9;padding:10px 14px;border-radius:6px;color:#222;text-decoration:none;font-weight:700;transition:transform .12s ease}
+.back-btn:hover{transform:translateY(-3px)}
+
+/* hero */
+.hero-banner{
+  border-radius:18px;
+  padding:36px;
+  color:#fff;
+  display:flex;
+  align-items:flex-end;
+  min-height:140px;
+  margin-bottom:26px;
+  background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&q=80&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  box-shadow:var(--soft-shadow-2);
+}
+.hero-content h1{margin:0;font-size:20px;font-weight:800}
+.hero-sub{opacity:0.95;margin-top:8px}
+
+/* layout */
+.layout-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start}
+
+/* main column */
+.section-title{font-size:20px;margin:8px 0 16px;font-weight:700}
+
+/* mood row */
+.mood-row{
+  display:flex;
+  gap:14px;
+  padding:18px;
+  background:#efefef;
+  border-radius:12px;
+}
+.mood-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  width:120px;
+  padding:14px;
+  background:var(--card-bg);
+  border-radius:12px;
+  box-shadow: var(--soft-shadow-2);
+  text-align:center;
+  cursor:pointer;
+  border:1px solid rgba(0,0,0,0.03);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.mood-card:hover{transform:translateY(-6px)}
+.mood-icon{font-size:28px;padding:12px;border-radius:10px}
+.mood-verygood{background:linear-gradient(180deg,#dff8e6,#bff3d0);width:56px;height:56px;display:grid;place-items:center;border-radius:10px}
+.mood-good{background:linear-gradient(180deg,#e8f7ef,#cfeee6);width:56px;height:56px;display:grid;place-items:center;border-radius:10px}
+.mood-neutral{background:linear-gradient(180deg,#fff4d1,#ffe3a8);width:56px;height:56px;display:grid;place-items:center;border-radius:10px}
+.mood-sad{background:linear-gradient(180deg,#ffd7cc,#ffb4a7);width:56px;height:56px;display:grid;place-items:center;border-radius:10px}
+
+/* reminders list */
+.reminders-list{display:flex;flex-direction:column;gap:14px}
+.reminder{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:var(--card-bg);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:var(--soft-shadow-2);
+  border:1px solid rgba(0,0,0,0.03);
+}
+.rem-icon{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,#e8f3ff,#d6ebff)}
+.rem-body{flex:1}
+.rem-title{font-weight:700}
+.rem-desc{color:var(--muted);margin-top:6px}
+.rem-chip{display:inline-block;margin-top:8px;background:#fff6e8;color:#ad7a3f;padding:6px 8px;border-radius:999px;font-size:12px}
+.rem-action{margin-left:12px}
+
+/* activities list */
+.activities-list{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.activity-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:var(--card-bg);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:var(--soft-shadow-2);
+  border:1px solid rgba(0,0,0,0.03);
+}
+.act-left{display:flex;gap:12px;align-items:center}
+.act-icon{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,#ffe8f0,#ffd6e6)}
+.act-info .act-title{font-weight:700}
+.act-info .act-desc{color:var(--muted);font-size:13px;margin-top:6px}
+.act-meta{margin-top:6px;font-size:12px;color:var(--muted)}
+.act-action{display:flex;align-items:center;gap:8px}
+.status{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700}
+.status.completed{background:#e9fbef;color:#137a3f}
+
+/* see more */
+.see-more{margin-top:12px;text-align:center}
+
+/* progress card */
+.progress-card{background:linear-gradient(180deg,#f3fbff,#eef9ff);padding:18px;border-radius:12px;box-shadow:var(--soft-shadow-2);border:1px solid rgba(0,0,0,0.02)}
+.progress-stats{display:flex;gap:18px;justify-content:space-between;margin-bottom:12px}
+.stat{text-align:center}
+.stat-num{font-weight:800;font-size:18px}
+.progress-bar-wrap{margin-top:8px}
+.progress-label{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-weight:600;margin-bottom:8px}
+.progress-bar{height:10px;background:rgba(0,0,0,0.06);border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#5aa6ff,#2f78b7);border-radius:999px}
+
+/* sidebar */
+.sidebar{display:flex;flex-direction:column;gap:14px}
+.achievements h3{margin:0 0 8px}
+.achievement{
+  display:flex;align-items:center;gap:10px;background:var(--card-bg);padding:12px;border-radius:12px;box-shadow:var(--soft-shadow-2);border:1px solid rgba(0,0,0,0.03)
+}
+.ach-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:#fff4e6}
+.ach-body{flex:1}
+.ach-check{color:#3aa06a;font-weight:800}
+
+/* motivational card */
+.card.motivational{background:linear-gradient(180deg,#f3fff6,#e8fbf0);padding:16px;border-radius:12px;box-shadow:var(--soft-shadow-2);text-align:center}
+.card.motivational .heart{font-size:22px;margin-bottom:6px}
+
+/* next activity card */
+.card.next-activity{padding:14px;border-radius:12px;box-shadow:var(--soft-shadow-2);border:1px solid rgba(0,0,0,0.03)}
+.next-row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.next-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(180deg,#efe8ff,#dfd3ff)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;padding:8px 14px;border-radius:10px;font-weight:800;cursor:pointer;background:#f1f0ef;color:#111;transition:transform .12s ease,box-shadow .12s ease;overflow:hidden;position:relative;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(12,20,40,0.06)}
+.btn-blue{background:linear-gradient(90deg,#5aa6ff,#2f78b7);color:#fff}
+.btn-green{background:linear-gradient(90deg,#a5e6b7,#3aa06a);color:#fff}
+.btn-purple{background:linear-gradient(90deg,#b99ef5,#7a5bd8);color:#fff}
+.btn-ghost{background:#fff;border:1px solid rgba(0,0,0,0.06)}
+
+/* simple centered ripple (CSS-only) */
+.btn::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.45);transform:translate(-50%,-50%) scale(1);opacity:0;transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+.btn:active::after{opacity:1;transform:translate(-50%,-50%) scale(18)}
+
+/* footer */
+.site-footer.dark{background:#022d3a;color:#e6f3f6;padding:44px 0 28px;margin-top:40px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-grid{display:flex;gap:28px;align-items:flex-start;padding:18px 24px 8px}
+.footer-brand-col{flex:0 0 140px;display:flex;align-items:flex-start;justify-content:center}
+.footer-logo{width:120px;height:auto}
+.footer-cols{display:flex;gap:32px;flex:1;align-items:flex-start}
+.footer-cols h4{margin:0 0 8px;color:#dff6fb;font-size:16px;font-weight:700}
+.small-list{margin:0;padding-left:18px;color:rgba(223,240,244,0.95)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:18px 24px;text-align:center;color:rgba(223,240,244,0.85);margin-top:10px}
+
+/* responsive */
+@media (max-width:1100px){
+  .layout-grid{grid-template-columns:1fr}
+  .sidebar{order:2}
+  .contacts-grid{grid-template-columns:1fr}
+  .hero-banner{min-height:110px;padding:22px;border-radius:12px}
+}
+@media (max-width:600px){
+  .container{padding:14px}
+  .logo{width:72px}
+  .hero-banner{padding:18px}
+  .mood-row{flex-wrap:wrap}
+  .mood-card{width:48%}
+}

@@ -1,15 +1,129 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Solicitar Ayuda</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abuelitos en Red — Asistencia</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="../assets/css/public/SolicitarAyuda.css">
 </head>
-<body data-page="solicitar-ayuda">
-  <main class="container">
-    <h1>Solicitar Ayuda</h1>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="Logo Centro Digital" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">CENTRO DIGITAL</div>
+          <div class="brand-sub">ATENCIÓN · ACOMPAÑAMIENTO · ADULTOS MAYORES</div>
+        </div>
+      </div>
+
+
+    </div>
+  </header>
+
+  <main class="page container" id="main">
+    <!-- Volver -->
+    <a class="back-btn" href="HomePublic.html" title="Volver a Home">« Volver</a>
+
+    <!-- Hero panel with big help button -->
+    <section class="help-panel" aria-labelledby="helpTitle">
+      <h1 id="helpTitle" class="sr-only">Necesitas Asistencia?</h1>
+      <div class="help-text">
+        <p class="lead">Presiona el botón de ayuda y te conectaremos inmediatamente con un voluntario</p>
+        <p class="muted">capacitado que te asista con lo que necesites</p>
+      </div>
+
+      <div class="help-center">
+        <button class="big-help-btn" id="bigHelpBtn" aria-label="Necesito ayuda">
+          <span class="help-icon" aria-hidden="true">❗</span>
+          <span class="help-label">NECESITO<br>AYUDA</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Emergency immediate box -->
+    <section class="emergency-box" aria-labelledby="emTitle">
+      <div class="em-inner">
+        <div class="em-header" id="emTitle">
+          <span class="em-emoji" aria-hidden="true">🚨</span>
+          <strong>Emergencia Médica</strong>
+        </div>
+        <p class="em-desc">Presiona este botón solo en caso de emergencia. Se enviará tu ubicación y una alerta inmediata a tus contactos de emergencia y servicios médicos.</p>
+
+        <div class="em-actions">
+          <button class="btn btn-emergency ripple" id="sendLocationBtn">EMERGENCIA - ENVIAR UBICACIÓN</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assistance type cards -->
+    <section class="assist-types" aria-label="Tipos de asistencia">
+      <h2 class="center-title">O elige un tipo de asistencia</h2>
+
+      <div class="cards-row">
+        <article class="assist-card">
+          <div class="assist-icon">📞</div>
+          <h3>Llamada de Voz</h3>
+          <p class="muted">Habla directamente con un asistente</p>
+          <div class="card-actions">
+            <button class="btn btn-orange ripple">Llamar Ahora</button>
+          </div>
+        </article>
+
+        <article class="assist-card">
+          <div class="assist-icon">📹</div>
+          <h3>Videollamada</h3>
+          <p class="muted">Asistencia visual en tiempo real</p>
+          <div class="card-actions">
+            <button class="btn btn-blue ripple">Iniciar Video</button>
+          </div>
+        </article>
+
+        <article class="assist-card">
+          <div class="assist-icon">💬</div>
+          <h3>Chat en Vivo</h3>
+          <p class="muted">Escribe tus consultas</p>
+          <div class="card-actions">
+            <button class="btn btn-green ripple">Abrir Chat</button>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
-  <script src="../assets/js/main.js"></script>
+
+  <footer class="site-footer dark">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <img src="../assets/img/logo.png" alt="Logo" class="footer-logo">
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Autores</h4>
+          <ul class="small-list">
+            <li>Asmat Villanueva Alejandro Sebastián</li>
+            <li>Braulio Feliciano Aguirre</li>
+            <li>Jhon Ángel Apeza Pariapaza</li>
+            <li>Justin André Estrada Mallqui</li>
+            <li>Domínguez Grados Robinson Smith</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Docente</h4>
+          <p>Ing. Juan Ricardo Tapia Carbajal</p>
+        </div>
+        <div>
+          <h4>Institución</h4>
+          <p>Universidad Privada del Norte<br>Lima Norte, Perú</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+    </div>
+  </footer>
+
 </body>
 </html>

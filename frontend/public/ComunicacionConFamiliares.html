@@ -1,15 +1,214 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Comunicación con Familiares</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abuelitos en Red — Familia</title>
   <link rel="stylesheet" href="../assets/css/public/ComunicacionConFamiliares.css">
 </head>
-<body data-page="comunicacion-familiares">
-  <main class="container">
-    <h1>Comunicación con Familiares</h1>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="Logo Centro Digital" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">CENTRO DIGITAL</div>
+          <div class="brand-sub">ATENCIÓN · ACOMPAÑAMIENTO · ADULTOS MAYORES</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="page container">
+    <a class="back-btn" href="HomePublic.html" title="Volver a Home">« Volver</a>
+
+  <!-- Hero banner (now uses a background image URL directly) -->
+  <section class="hero-banner" role="region" aria-label="Tu familia te espera"
+          style="background-image: url('https://res.cloudinary.com/dxuk9bogw/image/upload/v1761117190/imagen_2025-10-22_021257518_pyhehc.png'); background-size: cover; background-position: center;">
+    <div class="hero-content">
+      <h2>Tu Familia te Espera</h2>
+      <p>Conéctate cuando quieras, estamos aquí para ti</p>
+    </div>
+  </section>
+
+    <!-- Main grid: left content + right sidebar -->
+    <section class="layout-grid" aria-label="Panel familiar">
+      <div class="main-col">
+        <h3 class="section-title">Tus Contactos Familiares</h3>
+
+        <div class="contacts-grid">
+          <!-- Contact card -->
+          <article class="contact-card">
+            <div class="contact-left">
+              <div class="avatar">AM</div>
+            </div>
+            <div class="contact-body">
+              <div class="contact-name">Ana María <span class="role">Hija</span></div>
+              <div class="contact-meta">Hace 2 horas</div>
+              <div class="contact-actions">
+                <button class="btn btn-green ripple" aria-label="Llamar a Ana María">📞</button>
+                <button class="btn btn-blue ripple" aria-label="Videollamada con Ana María">📹</button>
+                <button class="btn btn-ghost ripple" aria-label="Chat con Ana María">💬</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-left"><div class="avatar">CR</div></div>
+            <div class="contact-body">
+              <div class="contact-name">Carlos <span class="role">Hijo</span></div>
+              <div class="contact-meta">Ayer</div>
+              <div class="contact-actions">
+                <button class="btn btn-green ripple">📞</button>
+                <button class="btn btn-blue ripple">📹</button>
+                <button class="btn btn-ghost ripple">💬</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-left"><div class="avatar">SF</div></div>
+            <div class="contact-body">
+              <div class="contact-name">Sofía <span class="role">Nieta</span></div>
+              <div class="contact-meta">Hace 1 día</div>
+              <div class="contact-actions">
+                <button class="btn btn-green ripple">📞</button>
+                <button class="btn btn-blue ripple">📹</button>
+                <button class="btn btn-ghost ripple">💬</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <div class="contact-left"><div class="avatar">RB</div></div>
+            <div class="contact-body">
+              <div class="contact-name">Roberto <span class="role">Hermano</span></div>
+              <div class="contact-meta">Hace 3 días</div>
+              <div class="contact-actions">
+                <button class="btn btn-green ripple">📞</button>
+                <button class="btn btn-blue ripple">📹</button>
+                <button class="btn btn-ghost ripple">💬</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="section-title">Mensajes Recientes</h3>
+
+        <div class="messages-list">
+          <article class="message-card">
+            <div class="msg-avatar">AM</div>
+            <div class="msg-body">
+              <div class="msg-head">
+                <strong>Ana María</strong>
+                <span class="msg-time">10:30 AM</span>
+              </div>
+              <p>¡Hola mamá! ¿Cómo estás hoy? Te envío un abrazo grande</p>
+              <div class="msg-actions">
+                <button class="btn btn-ghost ripple">Responder</button>
+                <button class="btn btn-green ripple">Llamar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="message-card unread">
+            <div class="msg-avatar">S</div>
+            <div class="msg-body">
+              <div class="msg-head">
+                <strong>Sofía</strong>
+                <span class="msg-time">Ayer 6:45 PM <span class="badge-new">Nuevo</span></span>
+              </div>
+              <p>Abuelita, te extraño mucho. ¿Podemos hacer videollamada?</p>
+              <div class="msg-actions">
+                <button class="btn btn-ghost ripple">Responder</button>
+                <button class="btn btn-green ripple">Llamar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="message-card">
+            <div class="msg-avatar">C</div>
+            <div class="msg-body">
+              <div class="msg-head">
+                <strong>Carlos</strong>
+                <span class="msg-time">Ayer 9:00 AM</span>
+              </div>
+              <p>Recuerda tomar tu medicamento. Te llamo en la tarde</p>
+              <div class="msg-actions">
+                <button class="btn btn-ghost ripple">Responder</button>
+                <button class="btn btn-green ripple">Llamar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card highlight-msg">
+          <div class="heart">❤</div>
+          <h4>Mensaje de Hoy</h4>
+          <p class="muted">"Tu familia te quiere mucho y está pensando en ti. ¡Eres muy importante para todos!"</p>
+        </div>
+
+        <h4 class="sidebar-title">Fotos Compartidas</h4>
+        <div class="photo-card">
+          <img src="https://res.cloudinary.com/dmm3qtoe6/image/upload/v1761117195/Rectangle_67_ob0mz8.png" alt="Foto compartida 1">
+          <div class="photo-meta">
+            <h5>Cumpleaños de Sofía</h5>
+            <small>15 Oct 2025 · De: Ana María</small>
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="https://res.cloudinary.com/dmm3qtoe6/image/upload/v1761117222/Rectangle_69_hdtvfg.png" alt="Foto compartida 2">
+          <div class="photo-meta">
+            <h5>Paseo familiar</h5>
+            <small>10 Oct 2025 · De: Carlos</small>
+          </div>
+        </div>
+
+        <div class="quick-actions card">
+          <h5>Acciones Rápidas</h5>
+          <button class="btn btn-blue ripple">Iniciar Videollamada Grupal</button>
+          <button class="btn btn-ghost ripple">Enviar Mensaje a Todos</button>
+        </div>
+
+        <a class="view-all btn btn-ghost" href="#">Ver Todas las Fotos</a>
+      </aside>
+    </section>
   </main>
-  <script src="../assets/js/main.js"></script>
+
+  <footer class="site-footer dark">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <img src="../assets/img/logo.png" alt="Logo" class="footer-logo">
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Autores</h4>
+          <ul class="small-list">
+            <li>Asmat Villanueva Alejandro Sebastián</li>
+            <li>Braulio Feliciano Aguirre</li>
+            <li>Jhon Ángel Apeza Pariapaza</li>
+            <li>Justin André Estrada Mallqui</li>
+            <li>Domínguez Grados Robinson Smith</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Docente</h4>
+          <p>Ing. Juan Ricardo Tapia Carbajal</p>
+        </div>
+        <div>
+          <h4>Institución</h4>
+          <p>Universidad Privada del Norte<br>Lima Norte, Perú</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+    </div>
+  </footer>
 </body>
 </html>

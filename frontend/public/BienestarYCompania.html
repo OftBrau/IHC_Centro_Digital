@@ -1,15 +1,260 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bienestar y Compañía</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abuelitos en Red — Bienestar y Compañía</title>
   <link rel="stylesheet" href="../assets/css/public/BienestarYCompania.css">
 </head>
-<body data-page="bienestar-compania">
-  <main class="container">
-    <h1>Bienestar y Compañía</h1>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="Logo Centro Digital" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">CENTRO DIGITAL</div>
+          <div class="brand-sub">ATENCIÓN · ACOMPAÑAMIENTO · ADULTOS MAYORES</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page container">
+    <a class="back-btn" href="HomePublic.html" title="Volver a Home">« Volver</a>
+
+    <!-- Hero banner -->
+    <section class="hero-banner" role="region" aria-label="Tu bienestar">
+      <div class="hero-content">
+        <h1>Tu Bienestar es Importante</h1>
+        <p class="hero-sub">Actividades diseñadas especialmente para ti</p>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="layout-grid" aria-label="Panel de Bienestar">
+      <div class="main-col">
+        <!-- Mood selector -->
+        <h2 class="section-title">Cómo te sientes hoy</h2>
+        <div class="mood-row" role="radiogroup" aria-label="Selecciona tu estado de ánimo">
+          <label class="mood-card">
+            <input type="radio" name="mood" value="muy-bien" hidden>
+            <div class="mood-icon mood-verygood">😊</div>
+            <div class="mood-label">Muy Bien</div>
+          </label>
+          <label class="mood-card">
+            <input type="radio" name="mood" value="bien" hidden>
+            <div class="mood-icon mood-good">🙂</div>
+            <div class="mood-label">Bien</div>
+          </label>
+          <label class="mood-card">
+            <input type="radio" name="mood" value="normal" hidden>
+            <div class="mood-icon mood-neutral">😐</div>
+            <div class="mood-label">Normal</div>
+          </label>
+          <label class="mood-card">
+            <input type="radio" name="mood" value="triste" hidden>
+            <div class="mood-icon mood-sad">☹️</div>
+            <div class="mood-label">Triste</div>
+          </label>
+        </div>
+
+        <!-- Health reminders -->
+        <h2 class="section-title">Recordatorio de Salud</h2>
+        <div class="reminders-list">
+          <div class="reminder">
+            <div class="rem-icon">💧</div>
+            <div class="rem-body">
+              <div class="rem-title">Hidratación</div>
+              <div class="rem-desc">Beber un vaso de agua</div>
+              <div class="rem-chip">Cada 2 horas</div>
+            </div>
+            <div class="rem-action">
+              <button class="btn btn-blue">Confirmar</button>
+            </div>
+          </div>
+
+          <div class="reminder">
+            <div class="rem-icon">🧠</div>
+            <div class="rem-body">
+              <div class="rem-title">Ejercicio Mental</div>
+              <div class="rem-desc">Juego de memoria o crucigramas</div>
+              <div class="rem-chip">15 minutos</div>
+            </div>
+            <div class="rem-action">
+              <button class="btn btn-blue">Confirmar</button>
+            </div>
+          </div>
+
+          <div class="reminder">
+            <div class="rem-icon">🚶‍♀️</div>
+            <div class="rem-body">
+              <div class="rem-title">Caminata Ligera</div>
+              <div class="rem-desc">Movimiento suave por 10 minutos</div>
+              <div class="rem-chip">Mañana y tarde</div>
+            </div>
+            <div class="rem-action">
+              <button class="btn btn-blue">Confirmar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Today's activities -->
+        <h2 class="section-title">Actividades de hoy</h2>
+        <div class="activities-list">
+          <div class="activity-card">
+            <div class="act-left">
+              <div class="act-icon">❤️</div>
+              <div class="act-info">
+                <div class="act-title">Ejercicios Suaves</div>
+                <div class="act-desc">10 minutos de estiramiento</div>
+                <div class="act-meta">10 min</div>
+              </div>
+            </div>
+            <div class="act-action">
+              <span class="status completed">Completado</span>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="act-left">
+              <div class="act-icon">🎧</div>
+              <div class="act-info">
+                <div class="act-title">Música Relajante</div>
+                <div class="act-desc">Escucha tus canciones favoritas</div>
+                <div class="act-meta">15 min</div>
+              </div>
+            </div>
+            <div class="act-action">
+              <button class="btn btn-green">Comenzar</button>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="act-left">
+              <div class="act-icon">📚</div>
+              <div class="act-info">
+                <div class="act-title">Lectura Diaria</div>
+                <div class="act-desc">Artículo sobre salud y bienestar</div>
+                <div class="act-meta">20 min</div>
+              </div>
+            </div>
+            <div class="act-action">
+              <span class="status completed">Completado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="see-more">
+          <a class="btn btn-ghost" href="#">Ver Más Actividades</a>
+        </div>
+
+        <!-- Progress summary -->
+        <h2 class="section-title">Resumen</h2>
+        <div class="progress-card">
+          <div class="progress-stats">
+            <div class="stat">
+              <div class="stat-num">7/7</div>
+              <div class="stat-label">Días Activos</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">12</div>
+              <div class="stat-label">Actividades Completadas</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">5</div>
+              <div class="stat-label">Llamadas Familiares</div>
+            </div>
+          </div>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-label">Progreso General <span class="progress-percent">65%</span></div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="achievements">
+          <h3>Tus Logros</h3>
+          <div class="achievement">
+            <div class="ach-icon">🏆</div>
+            <div class="ach-body">
+              <div class="ach-title">7 Días Consecutivos</div>
+              <div class="ach-desc">Sin olvidar medicación</div>
+            </div>
+            <div class="ach-check">✓</div>
+          </div>
+
+          <div class="achievement">
+            <div class="ach-icon">❤️</div>
+            <div class="ach-body">
+              <div class="ach-title">Estado de Ánimo</div>
+              <div class="ach-desc">5 días registrando tu estado</div>
+            </div>
+            <div class="ach-check">✓</div>
+          </div>
+
+          <div class="achievement muted large">
+            <div class="ach-icon">📞</div>
+            <div class="ach-body">
+              <div class="ach-title">Comunicación Activa</div>
+              <div class="ach-desc">10 llamadas familiares</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card motivational">
+          <div class="heart">💚</div>
+          <p><strong>¡Excelente Trabajo!</strong><br>Has completado 12 actividades esta semana. ¡Sigue así!</p>
+        </div>
+
+        <div class="card next-activity">
+          <h4>Próxima Actividad</h4>
+          <div class="next-row">
+            <div class="next-icon">🎵</div>
+            <div class="next-body">
+              <div class="next-title">Música Relajante</div>
+              <div class="next-time">En 2 horas</div>
+            </div>
+          </div>
+          <button class="btn btn-purple">Configurar Recordatorio</button>
+        </div>
+      </aside>
+    </section>
   </main>
-  <script src="../assets/js/main.js"></script>
+
+  <footer class="site-footer dark">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <img src="../assets/img/logo.png" alt="Logo" class="footer-logo">
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Autores</h4>
+          <ul class="small-list">
+            <li>Asmat Villanueva Alejandro Sebastián</li>
+            <li>Braulio Feliciano Aguirre</li>
+            <li>Jhon Ángel Apeza Pariapaza</li>
+            <li>Justin André Estrada Mallqui</li>
+            <li>Domínguez Grados Robinson Smith</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Docente</h4>
+          <p>Ing. Juan Ricardo Tapia Carbajal</p>
+        </div>
+        <div>
+          <h4>Institución</h4>
+          <p>Universidad Privada del Norte<br>Lima Norte, Perú</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+    </div>
+  </footer>
 </body>
 </html>
