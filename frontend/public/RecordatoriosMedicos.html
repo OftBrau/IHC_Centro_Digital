@@ -1,15 +1,186 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Recordatorios Médicos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abuelitos en Red — Citas y Recordatorios</title>
+
+  <!-- Estilos principales -->
   <link rel="stylesheet" href="../assets/css/public/RecordatoriosMedicos.css">
 </head>
-<body data-page="recordatorios-medicos">
-  <main class="container">
-    <h1>Recordatorios Médicos</h1>
+<body>
+  <header class="site-header">
+    <div class="header-top container">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="Logo Centro Digital" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">CENTRO DIGITAL</div>
+          <div class="brand-sub">ATENCIÓN · ACOMPAÑAMIENTO · ADULTOS MAYORES</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page container">
+    <!-- Volver a Home -->
+    <a class="back-btn btn btn-ghost" href="HomePublic.html" title="Volver a Home">« Volver</a>
+
+    <!-- Large info banner -->
+    <div class="notice-banner" role="status" aria-live="polite">
+      <div class="notice-icon" aria-hidden="true">🔔</div>
+      <div class="notice-body">
+        <div class="notice-title">¡Próxima Cita!</div>
+        <div class="notice-text">Tienes una cita con el Dr. María González el Lunes, 25 de Octubre a las 10:30 AM</div>
+      </div>
+      <div class="notice-actions">
+        <a class="btn btn-primary ripple" href="HomePublic.html">Ver Detalles</a>
+      </div>
+    </div>
+
+    <!-- Two column content -->
+    <section class="two-column" aria-label="Contenido principal">
+      <div class="col left">
+        <h2>Próximas Citas Médicas</h2>
+
+        <article class="card appointment" aria-labelledby="ap1">
+          <div class="card-header">
+            <h3 id="ap1">Dr. María González</h3>
+            <span class="pill pill-green">Cardiología</span>
+          </div>
+
+          <ul class="meta" aria-hidden="false">
+            <li><span class="icon" aria-hidden="true">📅</span> Lunes, 25 de Octubre 2025</li>
+            <li><span class="icon" aria-hidden="true">⏰</span> 10:30 AM</li>
+            <li><span class="icon" aria-hidden="true">📍</span> Hospital Central - Consultorio 304</li>
+          </ul>
+
+          <div class="card-actions">
+            <button class="btn btn-blue ripple">Confirmar Asistencia</button>
+            <button class="btn btn-ghost ripple">Reprogramar</button>
+          </div>
+        </article>
+
+        <article class="card appointment" aria-labelledby="ap2">
+          <div class="card-header">
+            <h3 id="ap2">Dr. Carlos Ruiz</h3>
+            <span class="pill pill-blue">Medicina General</span>
+          </div>
+
+          <ul class="meta">
+            <li><span class="icon">📅</span> Miércoles, 27 de Octubre 2025</li>
+            <li><span class="icon">⏰</span> 3:00 PM</li>
+            <li><span class="icon">📍</span> Clínica San José - Piso 2</li>
+          </ul>
+
+          <div class="card-actions">
+            <button class="btn btn-blue ripple">Confirmar Asistencia</button>
+            <button class="btn btn-ghost ripple">Reprogramar</button>
+          </div>
+        </article>
+
+        <article class="card appointment" aria-labelledby="ap3">
+          <div class="card-header">
+            <h3 id="ap3">Dr. Ana Torres</h3>
+            <span class="pill pill-green">Oftalmología</span>
+          </div>
+
+          <ul class="meta">
+            <li><span class="icon">📅</span> Viernes, 29 de Octubre 2025</li>
+            <li><span class="icon">⏰</span> 11:00 AM</li>
+            <li><span class="icon">📍</span> Centro Médico Vista - Consultorio 108</li>
+          </ul>
+
+          <div class="card-actions">
+            <button class="btn btn-blue ripple">Confirmar Asistencia</button>
+            <button class="btn btn-ghost ripple">Reprogramar</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="col right">
+        <h2>Recordatorios de Medicamentos</h2>
+
+        <div class="card reminder highlight" aria-live="polite">
+          <div class="rem-header">
+            <div><strong>Próximo Medicamento</strong></div>
+            <div class="pill pill-outline">Hoy</div>
+          </div>
+
+          <p class="rem-text">Vitamina D 1000 UI — Hoy a las 12:00 PM</p>
+
+          <div class="card-actions">
+            <button class="btn btn-green large ripple">Marcar como Tomado</button>
+          </div>
+        </div>
+
+        <div class="card reminder">
+          <div class="rem-row">
+            <div class="rem-left">
+              <strong>Losartán</strong><div class="muted">50mg</div>
+            </div>
+            <div class="pill pill-small">Cada día</div>
+          </div>
+          <div class="rem-meta"><span class="icon">⏰</span> 8:00 AM</div>
+          <div class="rem-status">Tomado a las 8:05 AM</div>
+        </div>
+
+        <div class="card reminder">
+          <div class="rem-row">
+            <div class="rem-left">
+              <strong>Aspirina</strong><div class="muted">100mg</div>
+            </div>
+            <div class="pill pill-small">Cada día</div>
+          </div>
+          <div class="rem-meta"><span class="icon">⏰</span> 8:00 AM</div>
+          <div class="rem-status">Pendiente</div>
+        </div>
+
+        <div class="card reminder small">
+          <div class="rem-left">
+            <strong>Vitamina D</strong><div class="muted">1000 UI</div>
+          </div>
+          <div class="rem-meta"><span class="icon">⏰</span> 12:00 PM</div>
+          <div class="card-actions">
+            <button class="btn btn-green ripple">Confirmar Toma</button>
+          </div>
+        </div>
+
+        <a class="add-med ripple" href="#">+ Agregar Nuevo Medicamento</a>
+      </div>
+    </section>
   </main>
-  <script src="../assets/js/main.js"></script>
+
+  <footer class="site-footer dark">
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <img src="../assets/img/logo-footer.png" alt="Logo" class="footer-logo">
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Autores</h4>
+          <ul class="small-list">
+            <li>Asmat Villanueva Alejandro Sebastián</li>
+            <li>Braulio Feliciano Aguirre</li>
+            <li>Jhon Ángel Apeza Pariapaza</li>
+            <li>Justin André Estrada Mallqui</li>
+            <li>Domínguez Grados Robinson Smith</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Docente</h4>
+          <p>Ing. Juan Ricardo Tapia Carbajal</p>
+        </div>
+        <div>
+          <h4>Institución</h4>
+          <p>Universidad Privada del Norte<br>Lima Norte, Perú</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+    </div>
+  </footer>
+
 </body>
 </html>

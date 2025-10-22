@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AbueloEnLinea — Registro</title>
+
+  <!-- CSS compartido del formulario -->
+  <link rel="stylesheet" href="../assets/css/login.css">
+  <!-- CSS de override para colocar la imagen a la derecha (mismo comportamiento que el login) -->
+  <link rel="stylesheet" href="../assets/css/login-right.css">
+
+  <!-- Fuente opcional -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-page">
+    <!-- Formulario en la columna izquierda -->
+    <div class="login-form register-only">
+      <form id="registerForm" autocomplete="off" novalidate>
+        <h2>Crear cuenta</h2>
+        <p>Únete a AbueloEnLinea — conecta con tu comunidad</p>
+
+        <label for="r-name">Nombre completo</label>
+        <input id="r-name" type="text" name="name" required autocomplete="name" placeholder="Tu nombre completo" />
+
+        <label for="r-email">Email o usuario</label>
+        <input id="r-email" type="text" name="email" required autocomplete="email" placeholder="ejemplo@correo.com o usuario" />
+
+        <label for="r-password">Contraseña</label>
+        <input id="r-password" type="password" name="password" required autocomplete="new-password" minlength="4" placeholder="Mínimo 4 caracteres" />
+
+        <div class="login-options">
+          <a href="login.html">¿Ya tienes cuenta? Inicia sesión</a>
+        </div>
+
+        <button id="registerBtn" type="submit" class="btn" aria-live="polite">
+          <span class="btn-text">Registrar</span>
+          <span class="btn-loading" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Imagen a la derecha (misma imagen que en login) -->
+    <div class="login-left" aria-hidden="true">
+      <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761108638/525ace68-add5-49f2-a80a-1959213fbd83.png" alt="Imagen lateral" />
+    </div>
+
+    <!-- Snackbar para notificaciones (reutilizado por ../assets/js/login.js) -->
+    <div id="snackbar" class="snackbar" aria-live="polite" role="status"></div>
+  </div>
+
+  <!-- Script: reutiliza login.js que contiene la lógica de registro -->
+  <script src="../assets/js/login.js"></script>
+</body>
+</html>

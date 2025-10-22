@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Abuelitos en Red — Home</title>
 
-  <!-- Estilos específicos -->
+  <!-- Estilos principales -->
   <link rel="stylesheet" href="../assets/css/public/HomePublic.css">
 
   <!-- Fuente Google -->
@@ -23,79 +23,77 @@
       </div>
 
       <nav class="main-nav" aria-label="Principal">
-        <a href="#" class="nav-link">TUTORIAL</a>
-        <a href="#" class="nav-link active">HOME</a>
-        <a href="#" class="nav-link">HERRAMIENTAS</a>
-        <a href="#" class="nav-link">NOSOTROS</a>
+        <a href="#" id="tutorialBtn" class="nav-link">TUTORIAL</a>
+        <a href="#home" class="nav-link active">HOME</a>
+        <a href="#nosotros" class="nav-link">NOSOTROS</a>
+        <a href="#herramientas" class="nav-link">HERRAMIENTAS</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero">
+    <section id="home" class="hero" aria-hidden="false">
       <img class="hero-img" src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103220/dce83d8b-40f2-410b-ac4f-117415d11866.png" alt="Abuelita sonriendo entre flores">
       <div class="hero-overlay"></div>
+
       <div class="hero-content container">
         <h1>Abuelitos en Red:<br><span>Tecnología con corazón</span></h1>
       </div>
-      <button class="hero-attention" id="heroAttention" aria-label="Atención">
-        <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103695/image_5_gdwipu.png" alt="Atención">
-      </button>
     </section>
 
-    <!-- Intro: tarjeta texto + imagen -->
-    <section class="intro container">
+    <!-- Intro / Nosotros -->
+    <section id="nosotros" class="intro container" aria-labelledby="introHeading">
       <div class="intro-grid">
-        <article class="intro-card">
+        <article class="intro-card" aria-describedby="introText">
           <div class="card-inner">
-            <p>Una plataforma diseñada especialmente para ti, donde encontrarás asistencia, acompañamiento y conexión con tus seres queridos. Todo en un solo lugar, de forma simple y accesible.</p>
+            <p id="introText">Una plataforma diseñada especialmente para ti, donde encontrarás asistencia, acompañamiento y conexión con tus seres queridos. Todo en un solo lugar, de forma simple y accesible.</p>
           </div>
         </article>
-        <div class="intro-media">
+        <div class="intro-media" role="img" aria-label="Pareja mayor usando celular">
           <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761104799/Rectangle_11_ptjgy2.png" alt="Pareja mayor usando celular">
         </div>
       </div>
     </section>
 
-    <!-- Sección acciones -->
-    <section class="actions">
+    <!-- Herramientas / Acciones -->
+    <section id="herramientas" class="actions" aria-labelledby="actionsHeading">
       <div class="container">
-        <h2 class="section-title">¿Qué puedes hacer aquí?</h2>
+        <h2 id="actionsHeading" class="section-title">¿Qué puedes hacer aquí?</h2>
 
         <div class="cards-grid" role="list">
-          <button class="action-card" data-target="RecordatoriosMedicos.html" role="listitem">
-            <div class="icon">💊</div>
+          <button class="action-card" data-target="RecordatoriosMedicos.html" role="listitem" aria-label="Recordatorios Medicos">
+            <div class="icon" aria-hidden="true">💊</div>
             <h3>Recordatorios Médicos</h3>
             <p>Nunca olvides tus citas y medicamentos</p>
           </button>
 
-          <button class="action-card" data-target="SolicitarAyuda.html" role="listitem">
-            <div class="icon">🤲</div>
+          <button class="action-card" data-target="SolicitarAyuda.html" role="listitem" aria-label="Solicitar Ayuda">
+            <div class="icon" aria-hidden="true">🤲</div>
             <h3>Solicitar Ayuda</h3>
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
-          <button class="action-card" data-target="ComunicacionConFamiliares.html" role="listitem">
-            <div class="icon">💬</div>
+          <button class="action-card" data-target="ComunicacionConFamiliares.html" role="listitem" aria-label="Comunicacion con Familiares">
+            <div class="icon" aria-hidden="true">💬</div>
             <h3>Comunicación con Familiares</h3>
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
-          <button class="action-card" data-target="BienestarYCompania.html" role="listitem">
-            <div class="icon">❤️</div>
+          <button class="action-card" data-target="BienestarYCompania.html" role="listitem" aria-label="Bienestar y Compañia">
+            <div class="icon" aria-hidden="true">❤️</div>
             <h3>Bienestar y Compañía</h3>
             <p>Actividades y seguimiento de tu ánimo</p>
           </button>
 
-          <button class="action-card" data-target="ResumenDiario.html" role="listitem">
-            <div class="icon">📝</div>
+          <button class="action-card" data-target="ResumenDiario.html" role="listitem" aria-label="Resumen Diario">
+            <div class="icon" aria-hidden="true">📝</div>
             <h3>Resumen Diario</h3>
             <p>Mantente conectado con tus seres queridos</p>
           </button>
 
-          <button class="action-card" data-target="Cuenta.html" role="listitem">
-            <div class="icon">👤</div>
+          <button class="action-card" data-target="Cuenta.html" role="listitem" aria-label="Cuenta">
+            <div class="icon" aria-hidden="true">👤</div>
             <h3>Cuenta</h3>
             <p>Gestiona tu perfil y ajustes</p>
           </button>
@@ -104,7 +102,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-inner">
           <div class="footer-brand">
@@ -140,9 +138,143 @@
         </div>
       </div>
     </footer>
+
+    <!-- Tutorial modal -->
+    <div id="tutorialModal" class="tutorial-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+      <div class="tutorial-overlay" data-close="true"></div>
+
+      <div class="tutorial-dialog" role="document" aria-live="polite">
+        <header class="tutorial-header">
+          <div class="tutorial-header-left">
+            <h3 id="tutorialTitle">Tutorial Interactivo</h3>
+            <div class="tutorial-step-text">
+              <span id="tutorialStep">Paso 1</span> de <span id="tutorialTotal">7</span>
+            </div>
+          </div>
+          <div class="tutorial-header-right">
+            <div id="tutorialPct" class="tutorial-pct">0%</div>
+            <button class="tutorial-close" id="tutorialClose" aria-label="Cerrar tutorial">✕</button>
+          </div>
+        </header>
+
+        <div class="tutorial-progress" aria-hidden="true">
+          <div class="tutorial-progress-bar" id="tutorialProgressBar" style="width:0%"></div>
+        </div>
+
+        <main class="tutorial-content" id="tutorialContent" tabindex="0">
+          <!-- Slides -->
+          <section class="tutorial-slide active" data-index="0">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761109979/imagen_2025-10-22_001253778_ihp9ml.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>¡Bienvenido a Abuelos en Red!</h4>
+              <p>Esta es tu plataforma de acompañamiento digital. Te guiaremos paso a paso para aprender a usarla.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Toma tu tiempo para aprender cada función</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tutorial-slide" data-index="1">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110104/imagen_2025-10-22_001457371_iicc92.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>Recordatorios Médicos</h4>
+              <p>Aquí verás tus próximas citas médicas y recordatorios de medicamentos. Nunca olvidarás tomar tu medicina.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Puedes confirmar tu asistencia con un solo toque</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tutorial-slide" data-index="2">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110124/imagen_2025-10-22_001519140_xyww4z.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>Botón de Ayuda</h4>
+              <p>Si necesitas asistencia, presiona el botón rojo grande. Te conectaremos inmediatamente con un voluntario.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Disponible 24/7 para cualquier emergencia</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tutorial-slide" data-index="3">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110334/imagen_2025-10-22_001849278_q2yp4i.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>Comunicación Familiar</h4>
+              <p>Mantente en contacto con tu familia. Puedes llamar, hacer videollamadas o enviar mensajes fácilmente.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Tus familiares recibirán notificaciones de tus actividades</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tutorial-slide" data-index="4">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110359/imagen_2025-10-22_001903164_er7qnb.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>Bienestar y Compañía</h4>
+              <p>Registra como te sientes cada dia y realiza actividades recomendadas para tu salud física y mental.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Gana logros completando actividades diarias</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tutorial-slide" data-index="5">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110364/imagen_2025-10-22_001918646_ba2vfp.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>Resumen Diario</h4>
+              <p>Consulta el resumen de tu día y comparte con tu familia.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Resumen diario disponible para revisión</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tutorial-slide" data-index="6">
+            <div class="slide-inner">
+              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110379/imagen_2025-10-22_001933334_wp5cy8.png" alt="" class="slide-icon" aria-hidden="true">
+              <h4>¡Ya estás Listo!</h4>
+              <p>Terminaste el tutorial. Puedes volver a iniciarlo cuando quieras.</p>
+
+              <div class="tutorial-tip">
+                <span class="tip-icon">💡</span>
+                <div class="tip-text">Consejo: Comienza a explorar todas las funciones disponibles</div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="tutorial-footer">
+          <div class="tutorial-dots" id="tutorialDots" aria-hidden="true"></div>
+          <div class="tutorial-actions">
+            <button id="tutorialPrev" class="btn small" aria-label="Anterior">‹ Anterior</button>
+            <button id="tutorialNext" class="btn small primary" aria-label="Siguiente">Siguiente ›</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Floating buttons -->
+    <button id="floatingAlert" class="floating-btn floating-alert" aria-label="Botón de atención" title="Atención">
+      <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103695/image_5_gdwipu.png" alt="Atención">
+    </button>
+    <button id="scrollTopBtn" class="floating-btn scroll-top" aria-label="Ir arriba" title="Ir arriba" hidden>↑</button>
+
   </main>
 
-  <!-- JS -->
+  <!-- Scripts -->
   <script src="../assets/js/homePublic.js"></script>
+
 </body>
 </html>
