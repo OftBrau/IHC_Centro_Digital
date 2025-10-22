@@ -1,16 +1,148 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Home Public</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abuelitos en Red — Home</title>
+
+  <!-- Estilos específicos -->
   <link rel="stylesheet" href="../assets/css/public/HomePublic.css">
+
+  <!-- Fuente Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-page="home-public">
-  <main class="container">
-    <h1 class="page-title">Home Public</h1>
-    <p>Contenido público de ejemplo.</p>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../assets/img/logo.png" alt="Centro Digital - Logo" class="logo">
+        <div class="brand-text">
+          <div class="brand-title">CENTRO DIGITAL</div>
+          <div class="brand-sub">ATENCIÓN Y ACOMPAÑAMIENTO ADULTOS MAYORES</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#" class="nav-link">TUTORIAL</a>
+        <a href="#" class="nav-link active">HOME</a>
+        <a href="#" class="nav-link">HERRAMIENTAS</a>
+        <a href="#" class="nav-link">NOSOTROS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <img class="hero-img" src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103220/dce83d8b-40f2-410b-ac4f-117415d11866.png" alt="Abuelita sonriendo entre flores">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1>Abuelitos en Red:<br><span>Tecnología con corazón</span></h1>
+      </div>
+      <button class="hero-attention" id="heroAttention" aria-label="Atención">
+        <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103695/image_5_gdwipu.png" alt="Atención">
+      </button>
+    </section>
+
+    <!-- Intro: tarjeta texto + imagen -->
+    <section class="intro container">
+      <div class="intro-grid">
+        <article class="intro-card">
+          <div class="card-inner">
+            <p>Una plataforma diseñada especialmente para ti, donde encontrarás asistencia, acompañamiento y conexión con tus seres queridos. Todo en un solo lugar, de forma simple y accesible.</p>
+          </div>
+        </article>
+        <div class="intro-media">
+          <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761104799/Rectangle_11_ptjgy2.png" alt="Pareja mayor usando celular">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección acciones -->
+    <section class="actions">
+      <div class="container">
+        <h2 class="section-title">¿Qué puedes hacer aquí?</h2>
+
+        <div class="cards-grid" role="list">
+          <button class="action-card" data-target="RecordatoriosMedicos.html" role="listitem">
+            <div class="icon">💊</div>
+            <h3>Recordatorios Médicos</h3>
+            <p>Nunca olvides tus citas y medicamentos</p>
+          </button>
+
+          <button class="action-card" data-target="SolicitarAyuda.html" role="listitem">
+            <div class="icon">🤲</div>
+            <h3>Solicitar Ayuda</h3>
+            <p>Mantente conectado con tus seres queridos</p>
+          </button>
+
+          <button class="action-card" data-target="ComunicacionConFamiliares.html" role="listitem">
+            <div class="icon">💬</div>
+            <h3>Comunicación con Familiares</h3>
+            <p>Mantente conectado con tus seres queridos</p>
+          </button>
+
+          <button class="action-card" data-target="BienestarYCompania.html" role="listitem">
+            <div class="icon">❤️</div>
+            <h3>Bienestar y Compañía</h3>
+            <p>Actividades y seguimiento de tu ánimo</p>
+          </button>
+
+          <button class="action-card" data-target="ResumenDiario.html" role="listitem">
+            <div class="icon">📝</div>
+            <h3>Resumen Diario</h3>
+            <p>Mantente conectado con tus seres queridos</p>
+          </button>
+
+          <button class="action-card" data-target="Cuenta.html" role="listitem">
+            <div class="icon">👤</div>
+            <h3>Cuenta</h3>
+            <p>Gestiona tu perfil y ajustes</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/img/logo.png" alt="Logo Footer" class="footer-logo">
+          </div>
+
+          <div class="footer-cols">
+            <div class="col">
+              <h4>Autores</h4>
+              <ul>
+                <li>Asmat Villanueva Alejandro Sebastián</li>
+                <li>Braulio Feliciano Aguirre Umapaco</li>
+                <li>Jhon Ángel Apeza Pariapaza</li>
+                <li>Justin André Estrada Mallqui</li>
+                <li>Domínguez Grados Robinson Smith</li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h4>Docente</h4>
+              <p>Ing. Juan Ricardo Tapia Carbajal</p>
+            </div>
+
+            <div class="col">
+              <h4>Institución</h4>
+              <p>Universidad Privada del Norte<br>Lima Norte, Perú<br>2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+        </div>
+      </div>
+    </footer>
   </main>
-  <script src="../assets/js/main.js"></script>
+
+  <!-- JS -->
+  <script src="../assets/js/homePublic.js"></script>
 </body>
 </html>
