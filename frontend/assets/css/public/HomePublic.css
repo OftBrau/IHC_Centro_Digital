@@ -3,9 +3,9 @@
 /* Variables */
 :root {
   --bg: #e8e8e8;
-  --teal: #0f6b74;
-  --teal-dark: #0a4a51;
-  --muted: #6b6b6b;
+  --teal: #0072bc;
+  --teal-dark: #141616;
+  --muted: #6b6b6bec;
   --card-bg: #ffffff;
   --accent: #d32f2f;
   --container-width: 1200px;
@@ -113,20 +113,84 @@ body {
 /* ========== HERO ========== */
 .hero {
   position: relative;
-  height: 920px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  height: 950px;
+  min-width: 320px;
   overflow: hidden;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero.carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #111;
 }
 
 .hero-img {
-  position: absolute;
-  inset: 0;
+  position: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.5);
+  object-position: center center;
+  -o-object-fit: cover;
+  -o-object-position: center center;
+}
+
+/* Si por cualquier motivo quieres ocultar la <img> (usar background-image en .carousel-item),
+   la regla siguiente permite eso sin romper el layout (se usa por el script opcional) */
+.hero .carousel-item .hero-slide-img.hidden {
+  display: none !important;
+}
+
+/* Overlay y contenido por encima del fondo */
+.hero .hero-overlay {
+  z-index: 20 !important;
+}
+
+.hero .hero-content {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-0%);/* mueve el bloque exactamente al centro vertical */
+  z-index: 60 !important;     /* muy por encima del overlay */
+  pointer-events: auto !important;
+  max-width: 420px;
+  color: #fff;
+}
+
+/* Responsive: alturas más pequeñas en pantallas pequeñas */
+@media (max-width: 1100px) {
+  .hero { height: 720px; }
+}
+@media (max-width: 900px) {
+  .hero .hero-content {
+    left: 24px;
+    bottom: 36px;        /* volver a usar bottom en móviles para mejor legibilidad */
+    top: auto;
+    transform: none;
+    max-width: calc(100% - 48px);
+    z-index: 60 !important;
+  }
+  .hero .hero-content h1 { font-size: 28px; }
+}
+@media (max-width: 520px) {
+  .hero .hero-content {
+    left: 18px;
+    bottom: 18px;
+    max-width: calc(100% - 36px);
+  }
+  .hero .hero-content h1 { font-size: 22px; }
+}
+/* Accessibility / performance hint: use will-change on images to improve rendering on transitions */
+.hero-slide-img {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .hero-overlay {
@@ -222,7 +286,7 @@ body {
   text-align: center;
   font-size: 32px;
   margin: 0 0 50px;
-  color: #fff;
+  color: #f3f3f3;
   font-weight: 600;
 }
 
@@ -681,21 +745,28 @@ body {
   }
 }
 
-/* === Floating buttons (draggable alert + scroll-top) === */
+
+/* Mantener botones flotantes fijos (no arrastrables) */
 .floating-btn {
-  position: fixed;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  display: grid;
-  place-items: center;
-  z-index: 3000;
-  cursor: grab;
-  transition: transform .12s ease, opacity .18s ease, left .18s ease, right .18s ease, top .18s ease;
-  user-select: none;
-  touch-action: none;
+  position: fixed !important;    /* fija en la pantalla */
+  right: 24px !important;
+  bottom: 100px !important;
+  left: auto !important;
+  top: auto !important;
+  cursor: pointer !important;    /* no muestra el "grab" */
+  touch-action: auto !important; /* permitir scroll nativo cuando sea necesario */
+  user-select: none !important;
+  transition: transform .12s ease, opacity .18s ease !important;
 }
+
+/* Evita transformaciones extra en hover si alguna lógica las añade */
+.floating-btn:hover { transform: none !important; }
+
+/* Si tienes dos botones (alert + scrollTop), posiciónalos con distintos offsets */
+.floating-alert { right: 24px !important; bottom: 100px !important; }
+.scroll-top     { right: 24px !important; bottom: 24px  !important; }
+
+
 .floating-btn:active {
   cursor: grabbing;
   transform: scale(.98);
@@ -875,3 +946,285 @@ form#accountForm { display:flex; flex-direction:column; gap:12px; }
   .form-row-inline { flex-direction: column; align-items:stretch; gap:8px; }
   .account-actions { justify-content:stretch; flex-direction:column-reverse; }
 }
+/* Sección Asilo */
+.asilo-info {
+  background: #ffffff;
+  padding: 80px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-icon {
+  background-color: #0072bc;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+}
+
+.info-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.info-item p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.info-grid {
+  max-width: 1100px;   /* ancho máximo del conjunto de tarjetas */
+  margin: 0 auto;      /* centra el grid dentro del contenedor */
+  justify-items: center; /* centra el contenido horizontalmente dentro de cada celda (opcional) */
+  align-items: start;  /* alinea el contenido en la parte superior de cada celda */
+  padding: 0 12px;     /* pequeño padding para que no pegue contra los bordes */
+  box-sizing: border-box;
+}
+
+/* Si quieres que las tarjetas mantengan su anchura y se centren sin estirarse */
+.info-grid > .info-item {
+  width: 100%;
+  max-width: 340px; /* ancho máximo por tarjeta (ajusta según necesites) */
+  margin: 0 auto;   /* centra cada tarjeta dentro de su celda */
+}
+
+/* Opción B — si usas Bootstrap (row/col) */
+.row.info-grid {
+  justify-content: center; /* centra las columnas dentro de la fila */
+  gap: 1.5rem;
+}
+.row.info-grid .info-item {
+  /* Asegúrate de usar clases de Bootstrap en HTML: <div class="col-12 col-md-4 info-item"> */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Opción A — centrar el bloque grid (recomendado) */
+.info-grid {
+  max-width: 1100px;   /* ancho máximo del conjunto de tarjetas */
+  margin: 0 auto;      /* centra el grid dentro del contenedor */
+  justify-items: center; /* centra el contenido horizontalmente dentro de cada celda (opcional) */
+  align-items: start;  /* alinea el contenido en la parte superior de cada celda */
+  padding: 0 12px;     /* pequeño padding para que no pegue contra los bordes */
+  box-sizing: border-box;
+}
+
+/* Si quieres que las tarjetas mantengan su anchura y se centren sin estirarse */
+.info-grid > .info-item {
+  width: 100%;
+  max-width: 340px; /* ancho máximo por tarjeta (ajusta según necesites) */
+  margin: 0 auto;   /* centra cada tarjeta dentro de su celda */
+}
+
+/* Opción B — si usas Bootstrap (row/col) */
+.row.info-grid {
+  justify-content: center; /* centra las columnas dentro de la fila */
+  gap: 1.5rem;
+}
+.row.info-grid .info-item {
+  /* Asegúrate de usar clases de Bootstrap en HTML: <div class="col-12 col-md-4 info-item"> */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* --- Mejoras visuales: centrar iconos y uniformar action-cards --- */
+
+/* Forzar layout columna y centrar icono/título dentro de la tarjeta */
+.action-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 28px 24px !important;
+  gap: 12px;
+  box-sizing: border-box;
+  max-width: 360px;       /* ancho agradable de tarjeta */
+  margin: 0 auto;         /* centra la tarjeta si está en columnas */
+}
+
+/* Icon wrapper */
+.action-card .icon {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  background: rgba(11,94,140,0.06); /* sutil fondo para destacar */
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+/* Icon image */
+.action-card .icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Títulos y texto */
+.action-card h3 { font-size: 18px; margin: 0; font-weight: 700; color: #123; }
+.action-card p { color: rgba(0,0,0,0.55); margin: 0; font-size: 14px; }
+
+/* Centrar la fila de tarjetas dentro del contenedor principal */
+.actions .container > .row {
+  justify-content: center;
+}
+
+/* Si tu grid usa .cards-grid (CSS original), centra también ese grid */
+.cards-grid {
+  justify-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tweak: reducir padding en pantallas pequeñas y asegurar icono más grande relativo */
+@media (max-width: 768px) {
+  .action-card { max-width: 100%; padding: 18px; }
+  .action-card .icon { width: 68px; height: 68px; }
+  .action-card .icon img { width: 40px; height: 40px; }
+}
+
+@media (min-width: 1400px) {
+  .action-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    max-width: 420px;
+  }
+  .action-card .icon { margin-right: 18px; margin-bottom: 0; width:56px; height:56px; border-radius:12px; background:transparent; }
+  .action-card .icon img { width:48px; height:48px; }
+}
+
+/* Centrar y mejorar la sección título */
+.section-title {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 28px auto;
+  font-size: 34px;
+  line-height: 1.08;
+  color: #fff;
+}
+
+/* Pequeño ajuste visual: sombra leve a las tarjetas para separarlas del fondo azul */
+.action-card {
+  box-shadow: 0 8px 30px rgba(8,30,45,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.action-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(8,30,45,0.12);
+}
+
+/* Aumentar hit area: que el botón ocupe toda la tarjeta (asegura accesibilidad) */
+.action-card { cursor: pointer; }
+
+/* Si usas .ms-3 wrapper en el HTML, anular su margen al usar este estilo centrado */
+.action-card .ms-3 { margin-left: 0 !important; }
+
+/* Sustituye o añade esto al final de ../assets/css/public/HomePublic.css
+   Mejora visual de botones flotantes: circulares, centrados, sombras, foco accesible
+*/
+
+.floating-btn {
+  position: fixed !important;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 4000;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  border: 0;
+  padding: 0;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .18s ease;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+}
+
+/* ALERTA ROJA (llamada/emergencia) -- circular, icono centrado */
+.floating-alert {
+  right: 24px !important;
+  bottom: 100px !important;
+  background: linear-gradient(180deg,#ff6161,#d32f2f);
+  color: #fff;
+  box-shadow: 0 12px 36px rgba(211,47,47,0.28);
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+/* SCROLL TOP - azul circular */
+.scroll-top {
+  right: 24px !important;
+  bottom: 24px !important;
+  background: linear-gradient(90deg,#4aa8ff,#2fb6d6);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(43,137,199,0.22);
+}
+
+/* SVG/icon sizing inside buttons */
+.floating-btn svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+/* Hover / active */
+.floating-btn:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.28); }
+.floating-btn:active { transform: translateY(-2px) scale(.98); }
+
+/* Focus visible for accessibility */
+.floating-btn:focus {
+  outline: 3px solid rgba(90,166,255,0.28);
+  outline-offset: 2px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.28);
+}
+
+/* Prevent accidental layout shift on very small screens */
+@media (max-width: 420px) {
+  .floating-alert { right: 12px !important; bottom: 120px !important; width:56px; height:56px; }
+  .scroll-top    { right: 12px !important; bottom: 12px !important; width:52px; height:52px; }
+}
+
+/* Ensure not draggable via CSS (defensive) */
+.floating-btn[draggable="true"] { draggable: false; }
+
+
+

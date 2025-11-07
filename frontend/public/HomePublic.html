@@ -5,295 +5,434 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Abuelitos en Red — Home</title>
 
-  <!-- Estilos principales -->
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos principales (tu CSS; cargado después para poder sobrescribir Bootstrap si hace falta) -->
   <link rel="stylesheet" href="../assets/css/public/HomePublic.css">
-  <!-- Pequeñas reglas para iconos por URL -->
-  <link rel="stylesheet" href="../assets/css/public/HomePublic.icons.css">
-  <!-- Estilos logout -->
-  <link rel="stylesheet" href="../assets/css/public/HomePublic.logout.css">
+
   <!-- Fuente Google -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="../assets/img/logo.png" alt="Centro Digital - Logo" class="logo">
-        <div class="brand-text">
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../assets/img/logo.png" alt="Centro Digital - Logo" class="logo" style="width:48px;height:48px;object-fit:cover;border-radius:12px;">
+        <div class="brand-text d-none d-md-block ms-2">
           <div class="brand-title">CENTRO DIGITAL</div>
           <div class="brand-sub">ATENCIÓN Y ACOMPAÑAMIENTO ADULTOS MAYORES</div>
         </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" id="tutorialBtn" href="#" role="button">TUTORIAL</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#home">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#herramientas">HERRAMIENTAS</a></li>
+          <li class="nav-item ms-lg-3">
+            <button id="logoutBtn" class="logout-btn btn btn-outline-light btn-sm" type="button" aria-label="Cerrar sesión">Salir</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO (Bootstrap Carousel) -->
+  <section id="home" class="hero" aria-hidden="false">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover" aria-label="Carrusel principal">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1762492137/538316b9-92da-4032-9bef-21057fbd16ee.png" class="d-block w-100 hero-slide-img" alt="Abuelita sonriendo entre flores">
+        </div>
+        <div class="carousel-item">
+          <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1762490926/9294881d-fbe7-48a9-859a-3a01f07884d0.png" class="d-block w-100 hero-slide-img" alt="Pareja mayor usando celular">
+        </div>
+        <div class="carousel-item">
+          <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1762491001/71415d09-86ec-4d6b-a2ac-d886d1bafa07.png" class="d-block w-100 hero-slide-img" alt="Imagen ilustrativa">
+        </div>
       </div>
 
-      <nav class="main-nav" aria-label="Principal">
-        <a href="#" id="tutorialBtn" class="nav-link">TUTORIAL</a>
-        <a href="#home" class="nav-link active">HOME</a>
-        <a href="#nosotros" class="nav-link">NOSOTROS</a>
-        <a href="#herramientas" class="nav-link">HERRAMIENTAS</a>
-      </nav>
+      <!-- indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
 
-      <!-- Botón Salir -->
-      <button id="logoutBtn" class="logout-btn" type="button" aria-label="Cerrar sesión">Salir</button>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section id="home" class="hero" aria-hidden="false">
-      <img class="hero-img" src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103220/dce83d8b-40f2-410b-ac4f-117415d11866.png" alt="Abuelita sonriendo entre flores">
-      <div class="hero-overlay"></div>
-
+      <!-- overlay + content -->
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content container">
         <h1>Abuelitos en Red:<br><span>Tecnología con corazón</span></h1>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Intro / Nosotros -->
-    <section id="nosotros" class="intro container" aria-labelledby="introHeading">
-      <div class="intro-grid">
-        <article class="intro-card" aria-describedby="introText">
-          <div class="card-inner">
-            <p id="introText">Una plataforma diseñada especialmente para ti, donde encontrarás asistencia, acompañamiento y conexión con tus seres queridos. Todo en un solo lugar, de forma simple y accesible.</p>
-          </div>
-        </article>
-        <div class="intro-media" role="img" aria-label="Pareja mayor usando celular">
-          <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761104799/Rectangle_11_ptjgy2.png" alt="Pareja mayor usando celular">
+  <!-- Intro / Nosotros -->
+  <section id="nosotros" class="intro container" aria-labelledby="introHeading">
+    <div class="intro-grid">
+      <article class="intro-card" aria-describedby="introText">
+        <div class="card-inner">
+          <p id="introText">Una plataforma diseñada especialmente para ti, donde encontrarás asistencia, acompañamiento y conexión con tus seres queridos. Todo en un solo lugar, de forma simple y accesible.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Herramientas / Acciones -->
-    <section id="herramientas" class="actions" aria-labelledby="actionsHeading">
-      <div class="container">
-        <h2 id="actionsHeading" class="section-title">¿Qué puedes hacer aquí?</h2>
-
-        <div class="cards-grid" role="list">
-          <button class="action-card" data-target="RecordatoriosMedicos.html" role="listitem" aria-label="Recordatorios Medicos">
-            <div class="icon" aria-hidden="true">
-              <img src="https://img.icons8.com/fluency/48/000000/pill.png" alt="Medicamentos icon">
-            </div>
-            <h3>Recordatorios Médicos</h3>
-            <p>Nunca olvides tus citas y medicamentos</p>
-          </button>
-
-          <button class="action-card" data-target="SolicitarAyuda.html" role="listitem" aria-label="Solicitar Ayuda">
-            <div class="icon" aria-hidden="true">
-              <img src="https://img.icons8.com/fluency/48/000000/help.png" alt="Solicitar ayuda icon">
-            </div>
-            <h3>Solicitar Ayuda</h3>
-            <p>Mantente conectado con tus seres queridos</p>
-          </button>
-
-          <button class="action-card" data-target="ComunicacionConFamiliares.html" role="listitem" aria-label="Comunicacion con Familiares">
-            <div class="icon" aria-hidden="true">
-              <img src="https://img.icons8.com/fluency/48/000000/chat--v1.png" alt="Chat familia icon">
-            </div>
-            <h3>Comunicación con Familiares</h3>
-            <p>Mantente conectado con tus seres queridos</p>
-          </button>
-
-          <button class="action-card" data-target="BienestarYCompania.html" role="listitem" aria-label="Bienestar y Compañia">
-            <div class="icon" aria-hidden="true">
-              <img src="https://img.icons8.com/fluency/48/000000/heart-with-pulse.png" alt="Bienestar icon">
-            </div>
-            <h3>Bienestar y Compañía</h3>
-            <p>Actividades y seguimiento de tu ánimo</p>
-          </button>
-
-          <button class="action-card" data-target="ResumenDiario.html" role="listitem" aria-label="Resumen Diario">
-            <div class="icon" aria-hidden="true">
-              <img src="https://img.icons8.com/fluency/48/000000/document.png" alt="Resumen icon">
-            </div>
-            <h3>Resumen Diario</h3>
-            <p>Mantente conectado con tus seres queridos</p>
-          </button>
-
-          <button id="accountCard" class="action-card" role="button" aria-label="Cuenta - Abrir ajustes" aria-haspopup="dialog" aria-controls="accountModal" type="button">
-            <div class="icon" aria-hidden="true">
-              <img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" alt="Cuenta icon">
-            </div>
-            <h3>Cuenta</h3>
-            <p>Gestiona tu perfil y ajustes</p>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-inner">
-          <div class="footer-brand">
-            <img src="../assets/img/logo.png" alt="Logo Footer" class="footer-logo">
-          </div>
-
-          <div class="footer-cols">
-            <div class="col">
-              <h4>Autores</h4>
-              <ul>
-                <li>Asmat Villanueva Alejandro Sebastián</li>
-                <li>Braulio Feliciano Aguirre Umapaco</li>
-                <li>Jhon Ángel Apeza Pariapaza</li>
-                <li>Justin André Estrada Mallqui</li>
-                <li>Domínguez Grados Robinson Smith</li>
-              </ul>
-            </div>
-
-            <div class="col">
-              <h4>Docente</h4>
-              <p>Ing. Juan Ricardo Tapia Carbajal</p>
-            </div>
-
-            <div class="col">
-              <h4>Institución</h4>
-              <p>Universidad Privada del Norte<br>Lima Norte, Perú<br>2025</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Tutorial modal -->
-    <div id="tutorialModal" class="tutorial-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
-      <div class="tutorial-overlay" data-close="true"></div>
-
-      <div class="tutorial-dialog" role="document" aria-live="polite">
-        <header class="tutorial-header">
-          <div class="tutorial-header-left">
-            <h3 id="tutorialTitle">Tutorial Interactivo</h3>
-            <div class="tutorial-step-text">
-              <span id="tutorialStep">Paso 1</span> de <span id="tutorialTotal">7</span>
-            </div>
-          </div>
-          <div class="tutorial-header-right">
-            <div id="tutorialPct" class="tutorial-pct">0%</div>
-            <button class="tutorial-close" id="tutorialClose" aria-label="Cerrar tutorial">✕</button>
-          </div>
-        </header>
-
-        <div class="tutorial-progress" aria-hidden="true">
-          <div class="tutorial-progress-bar" id="tutorialProgressBar" style="width:0%"></div>
-        </div>
-
-        <main class="tutorial-content" id="tutorialContent" tabindex="0">
-          <!-- Slides -->
-          <section class="tutorial-slide active" data-index="0">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761109979/imagen_2025-10-22_001253778_ihp9ml.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>¡Bienvenido a Abuelos en Red!</h4>
-              <p>Esta es tu plataforma de acompañamiento digital. Te guiaremos paso a paso para aprender a usarla.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Toma tu tiempo para aprender cada función</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tutorial-slide" data-index="1">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110104/imagen_2025-10-22_001457371_iicc92.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>Recordatorios Médicos</h4>
-              <p>Aquí verás tus próximas citas médicas y recordatorios de medicamentos. Nunca olvidarás tomar tu medicina.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Puedes confirmar tu asistencia con un solo toque</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tutorial-slide" data-index="2">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110124/imagen_2025-10-22_001519140_xyww4z.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>Botón de Ayuda</h4>
-              <p>Si necesitas asistencia, presiona el botón rojo grande. Te conectaremos inmediatamente con un voluntario.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Disponible 24/7 para cualquier emergencia</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tutorial-slide" data-index="3">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110334/imagen_2025-10-22_001849278_q2yp4i.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>Comunicación Familiar</h4>
-              <p>Mantente en contacto con tu familia. Puedes llamar, hacer videollamadas o enviar mensajes fácilmente.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Tus familiares recibirán notificaciones de tus actividades</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tutorial-slide" data-index="4">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110359/imagen_2025-10-22_001903164_er7qnb.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>Bienestar y Compañía</h4>
-              <p>Registra como te sientes cada dia y realiza actividades recomendadas para tu salud física y mental.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Gana logros completando actividades diarias</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tutorial-slide" data-index="5">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110364/imagen_2025-10-22_001918646_ba2vfp.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>Resumen Diario</h4>
-              <p>Consulta el resumen de tu día y comparte con tu familia.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Resumen diario disponible para revisión</div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tutorial-slide" data-index="6">
-            <div class="slide-inner">
-              <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110379/imagen_2025-10-22_001933334_wp5cy8.png" alt="" class="slide-icon" aria-hidden="true">
-              <h4>¡Ya estás Listo!</h4>
-              <p>Terminaste el tutorial. Puedes volver a iniciarlo cuando quieras.</p>
-
-              <div class="tutorial-tip">
-                <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
-                <div class="tip-text">Consejo: Comienza a explorar todas las funciones disponibles</div>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <footer class="tutorial-footer">
-          <div class="tutorial-dots" id="tutorialDots" aria-hidden="true"></div>
-          <div class="tutorial-actions">
-            <button id="tutorialPrev" class="btn small" aria-label="Anterior">‹ Anterior</button>
-            <button id="tutorialNext" class="btn small primary" aria-label="Siguiente">Siguiente ›</button>
-          </div>
-        </footer>
+      </article>
+      <div class="intro-media" role="img" aria-label="Pareja mayor usando celular">
+        <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761104799/Rectangle_11_ptjgy2.png" alt="Pareja mayor usando celular" class="img-fluid rounded">
       </div>
     </div>
+  </section>
 
-    <!-- Floating buttons -->
-    <button id="floatingAlert" class="floating-btn floating-alert" aria-label="Botón de atención" title="Atención">
-      <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761103695/image_5_gdwipu.png" alt="Atención">
-    </button>
-    <button id="scrollTopBtn" class="floating-btn scroll-top" aria-label="Ir arriba" title="Ir arriba" hidden>↑</button>
+  <!-- Herramientas / Acciones -->
+  <section id="herramientas" class="actions py-5" aria-labelledby="actionsHeading">
+    <div class="container">
+      <h2 id="actionsHeading" class="section-title mb-4">¿Qué puedes hacer aquí?</h2>
 
-  </main>
+      <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-4">
+          <button class="action-card" data-target="RecordatoriosMedicos.html" aria-label="Recordatorios Medicos">
+            <div class="icon" aria-hidden="true"><img src="https://img.icons8.com/fluency/48/000000/pill.png" alt="Medicamentos icon"></div>
+            <h3>Recordatorios Médicos</h3>
+            <p class="mb-0">Nunca olvides tus citas y medicamentos</p>
+          </button>
+        </div>
 
-  <!-- Scripts -->
-  <script src="../assets/js/homePublic.js"></script>
-  <script src="../assets/js/logout.js"></script>
+        <div class="col-12 col-md-6 col-lg-4">
+          <button class="action-card" data-target="SolicitarAyuda.html" aria-label="Solicitar Ayuda">
+            <div class="icon" aria-hidden="true"><img src="https://img.icons8.com/fluency/48/000000/help.png" alt="Solicitar ayuda icon"></div>
+            <h3>Solicitar Ayuda</h3>
+            <p class="mb-0">Mantente conectado con tus seres queridos</p>
+          </button>
+        </div>
 
+        <div class="col-12 col-md-6 col-lg-4">
+          <button class="action-card" data-target="ComunicacionConFamiliares.html" aria-label="Comunicacion con Familiares">
+            <div class="icon" aria-hidden="true"><img src="https://img.icons8.com/fluency/48/000000/chat--v1.png" alt="Chat familia icon"></div>
+            <h3>Comunicación con Familiares</h3>
+            <p class="mb-0">Llamadas, videollamadas y mensajes</p>
+          </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <button class="action-card" data-target="BienestarYCompania.html" aria-label="Bienestar y Compañia">
+            <div class="icon" aria-hidden="true"><img src="https://img.icons8.com/fluency/48/000000/heart-with-pulse.png" alt="Bienestar icon"></div>
+            <h3>Bienestar y Compañía</h3>
+            <p class="mb-0">Actividades y seguimiento de tu ánimo</p>
+          </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <button class="action-card" data-target="ResumenDiario.html" aria-label="Resumen Diario">
+            <div class="icon" aria-hidden="true"><img src="https://img.icons8.com/fluency/48/000000/document.png" alt="Resumen icon"></div>
+            <h3>Resumen Diario</h3>
+            <p class="mb-0">Consulta y comparte tu día</p>
+          </button>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <button id="accountCard" class="action-card" data-target="Cuenta.html" aria-label="Cuenta">
+            <div class="icon" aria-hidden="true"><img src="https://img.icons8.com/fluency/48/000000/user-male-circle.png" alt="Cuenta icon"></div>
+            <h3>Adopta</h3>
+            <p class="mb-0">Posibilidad de adoptar a un anciano</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Asilo info -->
+  <section class="asilo-info py-5">
+    <div class="container">
+      <div class="row info-grid text-center g-4">
+        <div class="col-12 col-md-4 info-item">
+          <div class="info-icon mx-auto">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/conference.png" alt="Solicitantes de asilo">
+          </div>
+          <h3>8.4 millones</h3>
+          <p>A finales de junio de 2025, había 8.4 millones de solicitantes de asilo en el mundo.</p>
+        </div>
+
+        <div class="col-12 col-md-4 info-item">
+          <div class="info-icon mx-auto">
+            <img src="https://img.icons8.com/ios-filled/100/ffffff/scales.png" alt="Derecho a asilo">
+          </div>
+          <h3>Derecho a solicitar asilo</h3>
+          <p>Toda persona que haya tenido que escapar de conflictos y persecuciones tiene el derecho humano a solicitar asilo.</p>
+        </div>
+
+        <div class="col-12 col-md-4 info-item">
+          <div class="info-icon mx-auto">
+            <img src="https://www.acnur.org/sites/default/files/2023-11/protection.svg" alt="Protección ACNUR">
+          </div>
+          <h3>Protección</h3>
+          <p>ACNUR protege a las personas solicitantes de asilo y procura garantizar que el trámite de sus solicitudes sea justo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner d-md-flex align-items-start justify-content-between">
+        <div class="footer-brand">
+          <img src="../assets/img/logo.png" alt="Logo Footer" class="footer-logo">
+        </div>
+
+        <div class="footer-cols d-flex gap-4 flex-wrap">
+          <div class="col">
+            <h4>Autores</h4>
+            <ul>
+              <li>Asmat Villanueva Alejandro Sebastián</li>
+              <li>Braulio Feliciano Aguirre Umapaco</li>
+              <li>Jhon Ángel Apeza Pariapaza</li>
+              <li>Justin André Estrada Mallqui</li>
+              <li>Domínguez Grados Robinson Smith</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h4>Docente</h4>
+            <p>Ing. Juan Ricardo Tapia Carbajal</p>
+          </div>
+
+          <div class="col">
+            <h4>Institución</h4>
+            <p>Universidad Privada del Norte<br>Lima Norte, Perú<br>2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center mt-4">
+        <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tutorial modal (kept original custom modal so slides logic remains compatible) -->
+  <div id="tutorialModal" class="tutorial-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+    <div class="tutorial-overlay" data-close="true"></div>
+
+    <div class="tutorial-dialog" role="document" aria-live="polite">
+      <header class="tutorial-header">
+        <div class="tutorial-header-left">
+          <h3 id="tutorialTitle">Tutorial Interactivo</h3>
+          <div class="tutorial-step-text">
+            <span id="tutorialStep">Paso 1</span> de <span id="tutorialTotal">7</span>
+          </div>
+        </div>
+        <div class="tutorial-header-right">
+          <div id="tutorialPct" class="tutorial-pct">0%</div>
+          <button class="tutorial-close" id="tutorialClose" aria-label="Cerrar tutorial">✕</button>
+        </div>
+      </header>
+
+      <div class="tutorial-progress" aria-hidden="true">
+        <div class="tutorial-progress-bar" id="tutorialProgressBar" style="width:0%"></div>
+      </div>
+
+      <main class="tutorial-content" id="tutorialContent" tabindex="-1">
+        <!-- Slides kept same as before -->
+        <section class="tutorial-slide active" data-index="0">
+          <div class="slide-inner">
+            <img class="slide-icon" src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761109979/imagen_2025-10-22_001253778_ihp9ml.png" alt="">
+            <h4>¡Bienvenido a Abuelos en Red!</h4>
+            <p>Esta es tu plataforma de acompañamiento digital. Te guiaremos paso a paso para aprender a usarla.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Toma tu tiempo para aprender cada función</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tutorial-slide" data-index="1">
+          <div class="slide-inner">
+            <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110104/imagen_2025-10-22_001457371_iicc92.png" alt="" class="slide-icon" aria-hidden="true">
+            <h4>Recordatorios Médicos</h4>
+            <p>Aquí verás tus próximas citas médicas y recordatorios de medicamentos. Nunca olvidarás tomar tu medicina.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Puedes confirmar tu asistencia con un solo toque</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tutorial-slide" data-index="2">
+          <div class="slide-inner">
+            <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110124/imagen_2025-10-22_001519140_xyww4z.png" alt="" class="slide-icon" aria-hidden="true">
+            <h4>Botón de Ayuda</h4>
+            <p>Si necesitas asistencia, presiona el botón rojo grande. Te conectaremos inmediatamente con un voluntario.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Disponible 24/7 para cualquier emergencia</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tutorial-slide" data-index="3">
+          <div class="slide-inner">
+            <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110334/imagen_2025-10-22_001849278_q2yp4i.png" alt="" class="slide-icon" aria-hidden="true">
+            <h4>Comunicación Familiar</h4>
+            <p>Mantente en contacto con tu familia. Puedes llamar, hacer videollamadas o enviar mensajes fácilmente.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Tus familiares recibirán notificaciones de tus actividades</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tutorial-slide" data-index="4">
+          <div class="slide-inner">
+            <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110359/imagen_2025-10-22_001903164_er7qnb.png" alt="" class="slide-icon" aria-hidden="true">
+            <h4>Bienestar y Compañía</h4>
+            <p>Registra como te sientes cada dia y realiza actividades recomendadas para tu salud física y mental.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Gana logros completando actividades diarias</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tutorial-slide" data-index="5">
+          <div class="slide-inner">
+            <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110364/imagen_2025-10-22_001918646_ba2vfp.png" alt="" class="slide-icon" aria-hidden="true">
+            <h4>Resumen Diario</h4>
+            <p>Consulta el resumen de tu día y comparte con tu familia.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Resumen diario disponible para revisión</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tutorial-slide" data-index="6">
+          <div class="slide-inner">
+            <img src="https://res.cloudinary.com/dxuk9bogw/image/upload/v1761110379/imagen_2025-10-22_001933334_wp5cy8.png" alt="" class="slide-icon" aria-hidden="true">
+            <h4>¡Ya estás Listo!</h4>
+            <p>Terminaste el tutorial. Puedes volver a iniciarlo cuando quieras.</p>
+
+            <div class="tutorial-tip">
+              <img class="tip-icon" src="https://img.icons8.com/fluency/24/000000/idea.png" alt="Tip">
+              <div class="tip-text">Consejo: Comienza a explorar todas las funciones disponibles</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="tutorial-footer">
+        <div class="tutorial-dots" id="tutorialDots" aria-hidden="true"></div>
+        <div class="tutorial-actions">
+          <button id="tutorialPrev" class="btn small" aria-label="Anterior">‹ Anterior</button>
+          <button id="tutorialNext" class="btn small primary" aria-label="Siguiente">Siguiente ›</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Floating buttons (SVG icons) -->
+  <button id="floatingAlert" class="floating-btn floating-alert" aria-label="Llamar emergencias" title="Llamar emergencias" data-phone="+51987654321">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.88 15.5h-1.75v-1.75h1.75V17.5zM13.12 13.5h-2.24V7h2.24v6.5z"/>
+    </svg>
+  </button>
+
+  <button id="scrollTopBtn" class="floating-btn scroll-top" aria-label="Ir arriba" title="Ir arriba" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.59 5.58L20 12 12 4 4 12z"/>
+    </svg>
+  </button>
+
+</main>
+
+<!-- Bootstrap Bundle JS (Popper included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Tus scripts -->
+<script src="../assets/js/homePublic.js"></script>
+<script src="../assets/js/logout.js"></script>
+
+<script>
+/* Small glue + floating button behavior + navbar close + defensive fixes */
+
+document.querySelectorAll('.action-card[data-target]').forEach(btn=>{
+  btn.addEventListener('click', function(){ const t = btn.getAttribute('data-target'); if (t) window.location.href = t; });
+});
+
+// Floating alert (call) behavior
+(function(){
+  const btn = document.getElementById('floatingAlert');
+  if (!btn) return;
+
+  // ensure not draggable
+  if (btn.hasAttribute('draggable')) btn.removeAttribute('draggable');
+
+  const phoneRaw = btn.dataset.phone || '+000000000';
+  const phoneTel = 'tel:' + phoneRaw.replace(/[^\d+]/g, '');
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  const stopDrag = (e) => { e.stopPropagation(); };
+  btn.addEventListener('pointerdown', stopDrag, { passive: true });
+  btn.addEventListener('touchstart', stopDrag, { passive: true });
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isMobile) {
+      window.location.href = phoneTel;
+      return;
+    }
+    const confirmed = window.confirm('¿Deseas llamar al número de emergencia ' + phoneRaw + '?');
+    if (confirmed) window.location.href = phoneTel;
+  });
+
+  const restore = () => {
+    btn.style.left = '';
+    btn.style.top = '';
+    btn.style.right = '24px';
+    btn.style.bottom = '100px';
+    btn.style.position = 'fixed';
+  };
+  ['pointerup','mouseup','touchend'].forEach(ev => btn.addEventListener(ev, restore, { passive: true }));
+})();
+
+// Scroll top button
+(function(){
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  if (!scrollBtn) return;
+  scrollBtn.removeAttribute('draggable');
+  scrollBtn.addEventListener('pointerdown', (e) => e.stopPropagation(), { passive: true });
+
+  function update() {
+    if (window.scrollY > 300) {
+      scrollBtn.hidden = false;
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+      scrollBtn.hidden = true;
+    }
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+
+  scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+
+</script>
 </body>
 </html>
