@@ -4,16 +4,23 @@
     box-sizing: border-box;
 }
 
-:root
-{
+:root {
     --teal-dark: #141616;
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
 }
 
+html, body {
+    height: 100%;
+}
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: #f5f5f5;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -24,6 +31,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo-section {
@@ -33,7 +42,7 @@ body {
 }
 
 .logo-icon {
-    background: #3b82f6;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
     width: 48px;
     height: 48px;
@@ -56,38 +65,50 @@ body {
     color: #666;
 }
 
-.main-nav {
+.nav-menu {
     display: flex;
-    gap: 2rem;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: #666;
-    display: flex;
+    gap: 10px;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: none;
+    background: white;
+    color: #666;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
     transition: all 0.3s;
-    font-size: 0.95rem;
+    min-width: 110px;
 }
 
-.nav-item:hover {
+.nav-btn:hover {
     background: #f0f0f0;
-    color: #333;
 }
 
-.nav-item.active {
-    background: #3b82f6;
+.nav-btn.active {
+    background: var(--primary);
     color: white;
+}
+
+.nav-btn[data-logout="true"] {
+    background: #fff6f6;
+    color: #d32f2f;
+    border: 1px solid rgba(243, 63, 63, 0.08);
 }
 
 /* Main Content */
 .main-content {
+    flex: 1 0 auto;
     max-width: 1400px;
     margin: 2rem auto;
     padding: 0 2rem;
+    width: 100%;
 }
 
 .page-header h2 {
@@ -104,7 +125,7 @@ body {
 /* Stats Cards */
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -168,12 +189,15 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .search-bar {
     flex: 1;
     max-width: 500px;
     position: relative;
+    min-width: 250px;
 }
 
 .search-icon {
@@ -191,9 +215,15 @@ body {
     font-size: 0.95rem;
 }
 
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
 .filter-buttons {
     display: flex;
     gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .filter-btn, .add-btn {
@@ -211,23 +241,23 @@ body {
 }
 
 .filter-btn.active {
-    background: #3b82f6;
+    background: var(--primary);
     color: white;
 }
 
 .add-btn {
-    background: #3b82f6;
+    background: var(--primary);
     color: white;
 }
 
 .add-btn:hover {
-    background: #2563eb;
+    background: var(--primary-dark);
 }
 
 /* Medications Grid */
 .medications-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
@@ -237,6 +267,12 @@ body {
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.med-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .med-header {
@@ -248,6 +284,7 @@ body {
 
 .med-icon {
     font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
 .med-info {
@@ -270,6 +307,7 @@ body {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .badge-active {
@@ -307,6 +345,7 @@ body {
     gap: 0.5rem;
     margin-bottom: 0.75rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .time-badge {
@@ -397,191 +436,188 @@ body {
     background: #fef2f2;
 }
 
-
-
-/* ========== FOOTER ========== */
+/* Footer */
 .site-footer {
-  background: var(--teal-dark);
-  color: #fff;
-  padding: 60px 0 0;
+    background: var(--teal-dark);
+    color: #fff;
+    padding: 60px 0 0;
+    margin-top: auto;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer-inner {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 60px;
-  align-items: start;
-  padding-bottom: 40px;
+    display: flex;
+    gap: 60px;
+    align-items: start;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    flex-shrink: 0;
 }
 
 .footer-logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
 .footer-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.footer-cols .col h4 {
-  margin: 0 0 16px 0;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-
-.nav-menu {
     display: flex;
-    gap: 10px;
-    align-items: center;
+    gap: 40px;
+    flex: 1;
+    flex-wrap: wrap;
+    min-width: 0;
 }
 
-.nav-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border: none;
-    background: white;
-    color: #666;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s;
+.footer-cols .col {
+    flex: 1;
+    min-width: 200px;
 }
 
-.nav-btn:hover {
-    background: #f0f0f0;
+.footer-cols h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
-.nav-btn.active {
-    background: #4A90E2;
-    color: white;
+.footer-cols ul {
+    list-style: none;
+    padding: 0;
 }
 
-.footer-cols .col p,
-.footer-cols .col ul {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-  line-height: 1.8;
+.footer-cols li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
-.footer-cols .col ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-cols .col ul li {
-  margin-bottom: 8px;
+.footer-cols p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 24px 0;
-  text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 0;
+    text-align: center;
 }
 
 .footer-bottom small {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
-}
-
-
-.emergency-btn .alert-btn {
-    background: #ef4444;
-    color: white;
-    border: none;
-    padding: 1rem 1.5rem;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 1.4;
-    transition: all 0.3s;
-}
-
-.emergency-btn .alert-btn:hover {
-    background: #dc2626;
-    transform: scale(1.05);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.footer-bottom p {
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
+    opacity: 0.8;
 }
 
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 4px 20px rgba(220, 20, 60, 0.4);
-    }
-    50% {
-        box-shadow: 0 4px 30px rgba(220, 20, 60, 0.7);
-    }
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 1024px) {
-    .summary-cards {
+    .medications-grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .emergency-card {
+    .header {
+        padding: 1rem;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .emergency-actions {
+    .nav-menu {
         width: 100%;
-        flex-direction: row;
+        justify-content: flex-start;
     }
 
-    .btn-primary,
-    .btn-secondary,
-    .btn-resolve {
+    .nav-btn {
+        min-width: auto;
         flex: 1;
+        justify-content: center;
     }
 
-    .filters-section {
+    .main-content {
+        padding: 0 1rem;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .search-section {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .search-bar {
+        max-width: 100%;
     }
 
     .filter-buttons {
         width: 100%;
-        flex-wrap: wrap;
     }
 
-    .nav-menu {
-        flex-wrap: wrap;
+    .filter-btn, .add-btn {
+        flex: 1;
     }
 
-    .header {
+    .medications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
         flex-direction: column;
-        gap: 15px;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer-cols {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-cols .col {
+        text-align: center;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-btn {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .med-header {
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-cols h4 {
+        font-size: 1rem;
+    }
+
+    .footer-cols li,
+    .footer-cols p {
+        font-size: 0.85rem;
     }
 }
