@@ -12,6 +12,7 @@
   --accent-blue: #2f78b7;
   --accent-green: #3aa06a;
   --accent-purple: #a78adf;
+  --teal-dark: #141616;
   --accent-peach: #ffd7c9;
   --card-bg: #ffffff;
   --soft-shadow: 0 12px 30px rgba(12,20,40,0.06);
@@ -106,15 +107,74 @@ body{margin:0;font-family:var(--font);background:var(--bg);color:#111;-webkit-fo
 .btn-ghost{background:#fff;border:1px solid rgba(0,0,0,0.06)}
 .chip.confirmed{background:#e8fbef;color:#137a3f;padding:8px 12px;border-radius:999px;font-weight:700}
 
-/* footer */
-.site-footer.dark{background:#022d3a;color:#e6f3f6;padding:44px 0;margin-top:40px;border-top:1px solid rgba(255,255,255,0.04)}
-.footer-grid{display:flex;gap:28px;align-items:flex-start;padding:18px 24px 8px}
-.footer-brand-col{flex:0 0 140px;display:flex;align-items:flex-start;justify-content:center}
-.footer-logo{width:120px;height:auto}
-.footer-cols{display:flex;gap:32px;flex:1;align-items:flex-start}
-.footer-cols h4{margin:0 0 8px;color:#dff6fb;font-size:16px;font-weight:700}
-.small-list{margin:0;padding-left:18px;color:rgba(223,240,244,0.95)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:18px 24px;text-align:center;color:rgba(223,240,244,0.85);margin-top:10px}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background: var(--teal-dark);
+  color: #fff;
+  padding: 60px 0 0;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 60px;
+  align-items: start;
+  padding-bottom: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-cols .col h4 {
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.footer-cols .col p,
+.footer-cols .col ul {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-cols .col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-cols .col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.footer-bottom small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
 
 /* Responsive */
 @media (max-width:1100px){

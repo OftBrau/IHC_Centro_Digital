@@ -4,12 +4,12 @@
 :root {
   --bg: #e8e8e8;
   --teal: #0072bc;
-  --teal-dark: #141616;
   --muted: #6b6b6bec;
   --card-bg: #ffffff;
   --accent: #d32f2f;
   --container-width: 1200px;
   --radius: 12px;
+  --teal-dark: #141616;
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
 

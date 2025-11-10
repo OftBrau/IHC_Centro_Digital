@@ -1,441 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Administrador - Reportes</title>
-    <link rel="stylesheet" href="../assets/css/admin/ReporteAdmin.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Administrador - Reportes</title>
+  <link rel="stylesheet" href="../assets/css/admin/ReporteAdmin.css" />
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-section">
-            <div class="logo-icon">DB</div>
-            <div class="logo-text">
-                <h1>Panel Administrador</h1>
-                <p>Abuelos en Red</p>
-            </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-section">
+      <div class="logo-icon">DB</div>
+      <div class="logo-text">
+        <h1>Panel Administrador</h1>
+        <p>Abuelos en Red</p>
+      </div>
+    </div>
+
+    <div class="nav-container">
+      <!-- Toggle visible on small screens; JS will also create/clone if needed -->
+      <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú de navegación">☰</button>
+
+      <nav class="nav-menu" role="navigation" aria-label="Menú principal administrador">
+        <!-- Navigation uses data-target (same folder) and explicit logout button -->
+        <button class="nav-btn" type="button" data-target="DashboardsAdmin.html">📊 Dashboard</button>
+        <button class="nav-btn" type="button" data-target="usuarioAdmin.html">👥 Usuarios</button>
+        <button class="nav-btn" type="button" data-target="EmergenciasAdmin.html" aria-current="page">⚠️ Emergencias</button>
+        <button class="nav-btn" type="button" data-target="MedicamentosAdmin.html">💊 Medicamentos</button>
+        <button class="nav-btn active" type="button" data-target="ReporteAdmin.html">📈 Reportes</button>
+        <button class="nav-btn" type="button" data-logout="true">X Salir</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="page-header">
+      <h2>Reportes y Análisis</h2>
+      <p>Insights y métricas del sistema</p>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="kpi-container">
+      <div class="kpi-card">
+        <div class="kpi-content">
+          <p class="kpi-label">Usuarios Totales</p>
+          <h3 class="kpi-value">248</h3>
+          <p class="kpi-change positive">↗ +12%</p>
         </div>
-        <nav class="main-nav">
-            <a href="#" class="nav-item">
-                <span class="icon">📊</span>
-                Dashboard
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">👥</span>
-                Usuarios
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">⚠️</span>
-                Emergencias
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">💊</span>
-                Medicamentos
-            </a>
-            <a href="#" class="nav-item active">
-                <span class="icon">📈</span>
-                Reportes
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">⚙️</span>
-                Configuración
-            </a>
-        </nav>
-    </header>
+        <div class="kpi-icon blue" aria-hidden="true"><span>👥</span></div>
+      </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="page-header">
-            <h2>Reportes y Análisis</h2>
-            <p>Insights y métricas del sistema</p>
+      <div class="kpi-card">
+        <div class="kpi-content">
+          <p class="kpi-label">Tasa de Adherencia</p>
+          <h3 class="kpi-value">90%</h3>
+          <p class="kpi-change positive">↗ +3%</p>
         </div>
+        <div class="kpi-icon green" aria-hidden="true"><span>✓</span></div>
+      </div>
 
-        <!-- KPI Cards -->
-        <div class="kpi-container">
-            <div class="kpi-card">
-                <div class="kpi-content">
-                    <p class="kpi-label">Usuarios Totales</p>
-                    <h3 class="kpi-value">248</h3>
-                    <p class="kpi-change positive">↗ +12%</p>
-                </div>
-                <div class="kpi-icon blue">
-                    <span>👥</span>
-                </div>
-            </div>
-
-            <div class="kpi-card">
-                <div class="kpi-content">
-                    <p class="kpi-label">Tasa de Adherencia</p>
-                    <h3 class="kpi-value">90%</h3>
-                    <p class="kpi-change positive">↗ +3%</p>
-                </div>
-                <div class="kpi-icon green">
-                    <span>✓</span>
-                </div>
-            </div>
-
-            <div class="kpi-card">
-                <div class="kpi-content">
-                    <p class="kpi-label">Tiempo Resp. Promedio</p>
-                    <h3 class="kpi-value">5.5 min</h3>
-                    <p class="kpi-change negative">↘ -18%</p>
-                </div>
-                <div class="kpi-icon purple">
-                    <span>⏱</span>
-                </div>
-            </div>
-
-            <div class="kpi-card">
-                <div class="kpi-content">
-                    <p class="kpi-label">Usuarios Activos Diarios</p>
-                    <h3 class="kpi-value">87%</h3>
-                    <p class="kpi-change positive">↗ +7%</p>
-                </div>
-                <div class="kpi-icon orange">
-                    <span>🔥</span>
-                </div>
-            </div>
+      <div class="kpi-card">
+        <div class="kpi-content">
+          <p class="kpi-label">Tiempo Resp. Promedio</p>
+          <h3 class="kpi-value">5.5 min</h3>
+          <p class="kpi-change negative">↘ -18%</p>
         </div>
+        <div class="kpi-icon purple" aria-hidden="true"><span>⏱</span></div>
+      </div>
 
-        <!-- Search Bar -->
-        <div class="search-section">
-            <div class="search-bar">
-                <span class="search-icon">🔍</span>
-                <input type="text" placeholder="Buscar por medicamento u usuario...">
-            </div>
-            <div class="filter-buttons">
-                <button class="filter-btn active">Todos</button>
-                <button class="filter-btn">Activos</button>
-                <button class="filter-btn">Pausados</button>
-                <button class="add-btn">+ Agregar</button>
-            </div>
+      <div class="kpi-card">
+        <div class="kpi-content">
+          <p class="kpi-label">Usuarios Activos Diarios</p>
+          <h3 class="kpi-value">87%</h3>
+          <p class="kpi-change positive">↗ +7%</p>
         </div>
+        <div class="kpi-icon orange" aria-hidden="true"><span>🔥</span></div>
+      </div>
+    </div>
 
-        <!-- Charts Section -->
-        <div class="charts-container">
-            <!-- Weekly Activity Chart -->
-            <div class="chart-card">
-                <h3 class="chart-title">Actividad Semanal</h3>
-                <div class="line-chart">
-                    <svg viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Grid lines -->
-                        <line x1="30" y1="20" x2="330" y2="20" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="50" x2="330" y2="50" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="80" x2="330" y2="80" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="110" x2="330" y2="110" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="140" x2="330" y2="140" stroke="#e5e5e5" stroke-width="1"/>
-                        
-                        <!-- Blue line -->
-                        <polyline points="30,60 80,50 130,35 180,40 230,30 280,50 330,45" 
-                                  fill="none" stroke="#3b82f6" stroke-width="2"/>
-                        
-                        <!-- Green line -->
-                        <polyline points="30,90 80,85 130,75 180,80 230,100 280,95 330,105" 
-                                  fill="none" stroke="#22c55e" stroke-width="2"/>
-                        
-                        <!-- X-axis labels -->
-                        <text x="30" y="155" font-size="10" fill="#666" text-anchor="middle">Lun</text>
-                        <text x="80" y="155" font-size="10" fill="#666" text-anchor="middle">Mar</text>
-                        <text x="130" y="155" font-size="10" fill="#666" text-anchor="middle">Mié</text>
-                        <text x="180" y="155" font-size="10" fill="#666" text-anchor="middle">Jue</text>
-                        <text x="230" y="155" font-size="10" fill="#666" text-anchor="middle">Vie</text>
-                        <text x="280" y="155" font-size="10" fill="#666" text-anchor="middle">Sáb</text>
-                        <text x="330" y="155" font-size="10" fill="#666" text-anchor="middle">Dom</text>
-                        
-                        <!-- Y-axis labels -->
-                        <text x="20" y="25" font-size="10" fill="#666" text-anchor="end">240</text>
-                        <text x="20" y="55" font-size="10" fill="#666" text-anchor="end">180</text>
-                        <text x="20" y="85" font-size="10" fill="#666" text-anchor="end">120</text>
-                        <text x="20" y="115" font-size="10" fill="#666" text-anchor="end">60</text>
-                        <text x="20" y="145" font-size="10" fill="#666" text-anchor="end">0</text>
-                    </svg>
-                </div>
-            </div>
+    <!-- Search Bar -->
+    <div class="search-section">
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Buscar por medicamento u usuario..." />
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active">Todos</button>
+        <button class="filter-btn">Activos</button>
+        <button class="filter-btn">Pausados</button>
+        <button class="add-btn">+ Agregar</button>
+      </div>
+    </div>
 
-            <!-- Monthly Trend Chart -->
-            <div class="chart-card">
-                <h3 class="chart-title">Tendencia Mensual</h3>
-                <div class="bar-chart">
-                    <svg viewBox="0 0 350 150" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Grid lines -->
-                        <line x1="30" y1="20" x2="330" y2="20" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="50" x2="330" y2="50" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="80" x2="330" y2="80" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="110" x2="330" y2="110" stroke="#e5e5e5" stroke-width="1"/>
-                        <line x1="30" y1="140" x2="330" y2="140" stroke="#e5e5e5" stroke-width="1"/>
-                        
-                        <!-- July bars -->
-                        <rect x="45" y="35" width="30" height="105" fill="#3b82f6" rx="2"/>
-                        <rect x="80" y="75" width="30" height="65" fill="#22c55e" rx="2"/>
-                        
-                        <!-- August bars -->
-                        <rect x="125" y="25" width="30" height="115" fill="#3b82f6" rx="2"/>
-                        <rect x="160" y="70" width="30" height="70" fill="#22c55e" rx="2"/>
-                        
-                        <!-- September bars -->
-                        <rect x="205" y="30" width="30" height="110" fill="#3b82f6" rx="2"/>
-                        <rect x="240" y="65" width="30" height="75" fill="#22c55e" rx="2"/>
-                        
-                        <!-- October bars -->
-                        <rect x="285" y="20" width="30" height="120" fill="#3b82f6" rx="2"/>
-                        <rect x="320" y="70" width="30" height="70" fill="#22c55e" rx="2"/>
-                        
-                        <!-- X-axis labels -->
-                        <text x="75" y="155" font-size="10" fill="#666" text-anchor="middle">Jul</text>
-                        <text x="155" y="155" font-size="10" fill="#666" text-anchor="middle">Ago</text>
-                        <text x="235" y="155" font-size="10" fill="#666" text-anchor="middle">Sep</text>
-                        <text x="315" y="155" font-size="10" fill="#666" text-anchor="middle">Oct</text>
-                        
-                        <!-- Y-axis labels -->
-                        <text x="20" y="25" font-size="10" fill="#666" text-anchor="end">260</text>
-                        <text x="20" y="55" font-size="10" fill="#666" text-anchor="end">195</text>
-                        <text x="20" y="85" font-size="10" fill="#666" text-anchor="end">130</text>
-                        <text x="20" y="115" font-size="10" fill="#666" text-anchor="end">65</text>
-                        <text x="20" y="145" font-size="10" fill="#666" text-anchor="end">0</text>
-                    </svg>
-                </div>
-            </div>
+    <!-- Charts Section -->
+    <div class="charts-container">
+      <!-- Weekly Activity Chart -->
+      <div class="chart-card">
+        <h3 class="chart-title">Actividad Semanal</h3>
+        <div class="line-chart" aria-hidden="true">
+          <svg viewBox="0 0 350 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <polyline points="30,100 80,85 130,60 180,66 230,50 280,85 330,78" fill="none" stroke="#3b82f6" stroke-width="2"/>
+            <!-- labels -->
+            <text x="30" y="165" font-size="10" fill="#666" text-anchor="middle">Lun</text>
+            <text x="80" y="165" font-size="10" fill="#666" text-anchor="middle">Mar</text>
+            <text x="130" y="165" font-size="10" fill="#666" text-anchor="middle">Mié</text>
+            <text x="180" y="165" font-size="10" fill="#666" text-anchor="middle">Jue</text>
+            <text x="230" y="165" font-size="10" fill="#666" text-anchor="middle">Vie</text>
+            <text x="280" y="165" font-size="10" fill="#666" text-anchor="middle">Sáb</text>
+            <text x="330" y="165" font-size="10" fill="#666" text-anchor="middle">Dom</text>
+          </svg>
         </div>
+      </div>
 
-        <!-- Bottom Section -->
-        <div class="bottom-section">
-            <!-- Most Common Medications -->
-            <div class="medications-card">
-                <h3 class="section-title">Medicamentos Más Comunes</h3>
-                <div class="medication-list">
-                    <div class="medication-item">
-                        <div class="med-info">
-                            <span class="med-number">1.</span>
-                            <span class="med-name">Losartán</span>
-                        </div>
-                        <div class="med-bar-container">
-                            <div class="med-bar" style="width: 100%;"></div>
-                        </div>
-                        <span class="med-count">145</span>
-                    </div>
-                    <div class="medication-item">
-                        <div class="med-info">
-                            <span class="med-number">2.</span>
-                            <span class="med-name">Metformina</span>
-                        </div>
-                        <div class="med-bar-container">
-                            <div class="med-bar" style="width: 88%;"></div>
-                        </div>
-                        <span class="med-count">128</span>
-                    </div>
-                    <div class="medication-item">
-                        <div class="med-info">
-                            <span class="med-number">3.</span>
-                            <span class="med-name">Aspirina</span>
-                        </div>
-                        <div class="med-bar-container">
-                            <div class="med-bar" style="width: 77%;"></div>
-                        </div>
-                        <span class="med-count">112</span>
-                    </div>
-                    <div class="medication-item">
-                        <div class="med-info">
-                            <span class="med-number">4.</span>
-                            <span class="med-name">Atorvastatina</span>
-                        </div>
-                        <div class="med-bar-container">
-                            <div class="med-bar" style="width: 68%;"></div>
-                        </div>
-                        <span class="med-count">98</span>
-                    </div>
-                    <div class="medication-item">
-                        <div class="med-info">
-                            <span class="med-number">5.</span>
-                            <span class="med-name">Omeprazol</span>
-                        </div>
-                        <div class="med-bar-container">
-                            <div class="med-bar" style="width: 60%;"></div>
-                        </div>
-                        <span class="med-count">87</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Monthly Trend Chart -->
+      <div class="chart-card">
+        <h3 class="chart-title">Tendencia Mensual</h3>
+        <div class="bar-chart" aria-hidden="true">
+          <svg viewBox="0 0 350 180" xmlns="http://www.w3.org/2000/svg">
+            <rect x="45" y="45" width="30" height="105" fill="#3b82f6" rx="3"/>
+            <rect x="125" y="25" width="30" height="125" fill="#3b82f6" rx="3"/>
+            <rect x="205" y="35" width="30" height="115" fill="#3b82f6" rx="3"/>
+            <rect x="285" y="20" width="30" height="130" fill="#3b82f6" rx="3"/>
+            <text x="75" y="165" font-size="10" fill="#666" text-anchor="middle">Jul</text>
+            <text x="155" y="165" font-size="10" fill="#666" text-anchor="middle">Ago</text>
+            <text x="235" y="165" font-size="10" fill="#666" text-anchor="middle">Sep</text>
+            <text x="315" y="165" font-size="10" fill="#666" text-anchor="middle">Oct</text>
+          </svg>
+        </div>
+      </div>
+    </div>
 
-            <!-- Alerts Summary -->
-            <div class="alerts-card">
-                <h3 class="section-title">Resumen de Alertas</h3>
-                <div class="alert-list">
-                    <div class="alert-item">
-                        <div class="alert-info">
-                            <span class="alert-dot red"></span>
-                            <span class="alert-name">Emergencias</span>
-                        </div>
-                        <div class="alert-bar-container">
-                            <div class="alert-bar red"></div>
-                        </div>
-                        <span class="alert-count">45</span>
-                    </div>
-                    <div class="alert-item">
-                        <div class="alert-info">
-                            <span class="alert-dot green"></span>
-                            <span class="alert-name">Medicamentos</span>
-                        </div>
-                        <div class="alert-bar-container">
-                            <div class="alert-bar green"></div>
-                        </div>
-                        <span class="alert-count">65</span>
-                    </div>
-                    <div class="alert-item">
-                        <div class="alert-info">
-                            <span class="alert-dot yellow"></span>
-                            <span class="alert-name">Caídas</span>
-                        </div>
-                        <div class="alert-bar-container">
-                            <div class="alert-bar yellow"></div>
-                        </div>
-                        <span class="alert-count">28</span>
-                    </div>
-                    <div class="alert-item">
-                        <div class="alert-info">
-                            <span class="alert-dot blue"></span>
-                            <span class="alert-name">Salud</span>
-                        </div>
-                        <div class="alert-bar-container">
-                            <div class="alert-bar blue"></div>
-                        </div>
-                        <span class="alert-count">35</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+      <div class="medications-card">
+        <h3 class="section-title">Medicamentos Más Comunes</h3>
+        <div class="medication-list">
+          <div class="medication-item">
+            <div class="med-info"><span class="med-number">1.</span> <span class="med-name">Losartán</span></div>
+            <div class="med-bar-container"><div class="med-bar" style="width:100%;"></div></div>
+            <span class="med-count">145</span>
+          </div>
+          <div class="medication-item">
+            <div class="med-info"><span class="med-number">2.</span> <span class="med-name">Metformina</span></div>
+            <div class="med-bar-container"><div class="med-bar" style="width:88%;"></div></div>
+            <span class="med-count">128</span>
+          </div>
+          <div class="medication-item">
+            <div class="med-info"><span class="med-number">3.</span> <span class="med-name">Aspirina</span></div>
+            <div class="med-bar-container"><div class="med-bar" style="width:77%;"></div></div>
+            <span class="med-count">112</span>
+          </div>
         </div>
+      </div>
 
-        <!-- Quick Stats -->
-        <div class="quick-stats-card">
-            <h3 class="section-title">Estadísticas Rápidas</h3>
-            <div class="quick-stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon-small purple">👥</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Usuarios Activos Hoy</p>
-                        <h4 class="stat-value-small">216</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small red">💊</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Medicamentos Tomados</p>
-                        <h4 class="stat-value-small">892</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small green">✓</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Alertas Resueltas</p>
-                        <h4 class="stat-value-small">38</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small purple">⏱</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Tiempo Resp. Promedio</p>
-                        <h4 class="stat-value-small">5.5 min</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small blue">📋</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Tareas Notificadas</p>
-                        <h4 class="stat-value-small">18</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small pink">🎯</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Tasa de Éxito</p>
-                        <h4 class="stat-value-small">94%</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small blue">📊</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Nuevos Registros</p>
-                        <h4 class="stat-value-small">8</h4>
-                    </div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon-small blue">📈</div>
-                    <div class="stat-content">
-                        <p class="stat-label-small">Sesiones Activas</p>
-                        <h4 class="stat-value-small">142</h4>
-                    </div>
-                </div>
-            </div>
+      <div class="alerts-card">
+        <h3 class="section-title">Resumen de Alertas</h3>
+        <div class="alert-list">
+          <div class="alert-item">
+            <div class="alert-info"><span class="alert-dot red"></span> <span class="alert-name">Emergencias</span></div>
+            <div class="alert-bar-container"><div class="alert-bar red" style="width:70%;"></div></div>
+            <span class="alert-count">45</span>
+          </div>
+          <div class="alert-item">
+            <div class="alert-info"><span class="alert-dot green"></span> <span class="alert-name">Medicamentos</span></div>
+            <div class="alert-bar-container"><div class="alert-bar green" style="width:85%;"></div></div>
+            <span class="alert-count">65</span>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Export Reports Section -->
-        <div class="export-section">
-            <div class="export-header">
-                <span class="export-icon">📄</span>
-                <h3>Exportar Reportes</h3>
-            </div>
-            <div class="export-grid">
-                <button class="export-btn">
-                    <span class="btn-icon">👥</span>
-                    Reporte de Usuarios
-                </button>
-                <button class="export-btn">
-                    <span class="btn-icon">💊</span>
-                    Reporte de Medicamentos
-                </button>
-                <button class="export-btn">
-                    <span class="btn-icon">⚠️</span>
-                    Reporte de Emergencias
-                </button>
-                <button class="export-btn">
-                    <span class="btn-icon">📊</span>
-                    Reporte de Actividad
-                </button>
-                <button class="export-btn">
-                    <span class="btn-icon">📅</span>
-                    Reporte Mensual
-                </button>
-                <button class="export-btn">
-                    <span class="btn-icon">📥</span>
-                    Exportar Todo (PDF)
-                </button>
-            </div>
+    <!-- Quick Stats -->
+    <div class="quick-stats-card">
+      <h3 class="section-title">Estadísticas Rápidas</h3>
+      <div class="quick-stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon-small">👥</div>
+          <div class="stat-content"><p class="stat-label-small">Usuarios Activos Hoy</p><h4 class="stat-value-small">216</h4></div>
         </div>
-    </main>
+        <div class="stat-item">
+          <div class="stat-icon-small">💊</div>
+          <div class="stat-content"><p class="stat-label-small">Medicamentos Tomados</p><h4 class="stat-value-small">892</h4></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="un-logo">
-                    <div class="laurel">🌿</div>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Autores</h4>
-                <ul>
-                    <li>• Alicia Fernández Sánchez Edmundo</li>
-                    <li>• Rocha Saucedo Tatiana Lizbeth</li>
-                    <li>• Banda Reyes Tadeo Emmanuel</li>
-                    <li>• Bonilla Aralid Sánchez Marleux</li>
-                    <li>• Ontiveros Virelles Izaskum Riochi</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Docente</h4>
-                <p>Ing. Ana Elizabeth Tejeda Guijada</p>
-            </div>
-            <div class="footer-section">
-                <h4>Universidad Cuauhtla del Norte</h4>
-                <p>Lina Rudy Dent</p>
-            </div>
-            <div class="emergency-btn">
-                <button class="alert-btn">⚠️<br>EMERGENCIA</button>
-            </div>
+    <!-- Export Reports -->
+    <div class="export-section">
+      <div class="export-header"><span class="export-icon">📄</span><h3>Exportar Reportes</h3></div>
+      <div class="export-grid">
+        <button class="export-btn"><span class="btn-icon">👥</span>Reporte de Usuarios</button>
+        <button class="export-btn"><span class="btn-icon">💊</span>Reporte de Medicamentos</button>
+        <button class="export-btn"><span class="btn-icon">⚠️</span>Reporte de Emergencias</button>
+        <button class="export-btn"><span class="btn-icon">📊</span>Reporte de Actividad</button>
+        <button class="export-btn"><span class="btn-icon">📅</span>Reporte Mensual</button>
+        <button class="export-btn"><span class="btn-icon">📥</span>Exportar Todo (PDF)</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner d-md-flex align-items-start justify-content-between">
+        <div class="footer-brand"><img src="../assets/img/logo.png" alt="Logo Footer" class="footer-logo"></div>
+        <div class="footer-cols d-flex gap-4 flex-wrap">
+          <div class="col"><h4>Autores</h4><ul><li>Asmat Villanueva Alejandro Sebastián</li><li>Braulio Feliciano Aguirre Llamoca</li><li>Jhon Ángel Apeza Pariapaza</li><li>Justin André Estrada Mallqui</li><li>Domínguez Grados Robinson Smith</li></ul></div>
+          <div class="col"><h4>Docente</h4><p>Ing. Juan Ricardo Tapia Carbajal</p></div>
+          <div class="col"><h4>Institución</h4><p>Universidad Privada del Norte<br/>Lima Norte, Perú<br/>2025</p></div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</p>
-        </div>
-    </footer>
+      </div>
+      <div class="footer-bottom text-center mt-4"><small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/homePublic.js"></script>
+  <script src="../assets/js/admin/admin-nav.js"></script>
 </body>
 </html>

@@ -16,31 +16,15 @@
                 <p>Abuelos en Red</p>
             </div>
         </div>
-        <nav class="main-nav">
-            <a href="#" class="nav-item">
-                <span class="icon">📊</span>
-                Dashboard
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">👥</span>
-                Usuarios
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">⚠️</span>
-                Emergencias
-            </a>
-            <a href="#" class="nav-item active">
-                <span class="icon">💊</span>
-                Medicamentos
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">📈</span>
-                Reportes
-            </a>
-            <a href="#" class="nav-item">
-                <span class="icon">⚙️</span>
-                Configuración
-            </a>
+
+        <nav class="nav-menu" role="navigation" aria-label="Menú principal administrador">
+            <!-- Navigation uses data-target (same folder) and explicit logout button -->
+            <button class="nav-btn" type="button" data-target="DashboardsAdmin.html">📊 Dashboard</button>
+            <button class="nav-btn" type="button" data-target="usuarioAdmin.html">👥 Usuarios</button>
+            <button class="nav-btn" type="button" data-target="EmergenciasAdmin.html" aria-current="page">⚠️ Emergencias</button>
+            <button class="nav-btn active" type="button" data-target="MedicamentosAdmin.html">💊 Medicamentos</button>
+            <button class="nav-btn" type="button" data-target="ReporteAdmin.html">📈 Reportes</button>
+            <button class="nav-btn" type="button" data-logout="true">X Salir</button>
         </nav>
     </header>
 
@@ -355,40 +339,46 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="un-logo">
-                    <div class="laurel">🌿</div>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Autores</h4>
-                <ul>
-                    <li>• Alicia Fernández Sánchez Edmundo</li>
-                    <li>• Rocha Saucedo Tatiana Lizbeth</li>
-                    <li>• Banda Reyes Tadeo Emmanuel</li>
-                    <li>• Bonilla Aralid Sánchez Marleux</li>
-                    <li>• Ontiveros Virelles Izaskum Riochi</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Docente</h4>
-                <p>Ing. Ana Elizabeth Tejeda Guijada</p>
-            </div>
-            <div class="footer-section">
-                <h4>Universidad Cuauhtla del Norte</h4>
-                <p>Lina Rudy Dent</p>
-            </div>
-            <div class="emergency-btn">
-                <button class="alert-btn">⚠️<br>EMERGENCIA</button>
-            </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner d-md-flex align-items-start justify-content-between">
+        <div class="footer-brand">
+          <img src="../assets/img/logo.png" alt="Logo Footer" class="footer-logo">
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</p>
+
+        <div class="footer-cols d-flex gap-4 flex-wrap">
+          <div class="col">
+            <h4>Autores</h4>
+            <ul>
+              <li>Asmat Villanueva Alejandro Sebastián</li>
+              <li>Braulio Feliciano Aguirre Llamoca</li>
+              <li>Jhon Ángel Apeza Pariapaza</li>
+              <li>Justin André Estrada Mallqui</li>
+              <li>Domínguez Grados Robinson Smith</li>
+            </ul>
+          </div>
+
+          <div class="col">
+            <h4>Docente</h4>
+            <p>Ing. Juan Ricardo Tapia Carbajal</p>
+          </div>
+
+          <div class="col">
+            <h4>Institución</h4>
+            <p>Universidad Privada del Norte<br>Lima Norte, Perú<br>2025</p>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <div class="footer-bottom text-center mt-4">
+        <small>© 2025 Abuelos en Red - Centro Digital de Atención y Acompañamiento para Adultos Mayores</small>
+      </div>
+    </div>
+  </footer>
+
+
         <script src="../assets/js/admin/admin-nav.js"></script>
 
 </body>

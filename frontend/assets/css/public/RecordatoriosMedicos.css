@@ -6,6 +6,7 @@
   --bg: #f7f2ee;
   --header-bg: #cfcfcf;
   --container: 1180px;
+  --teal-dark: #141616;
   --muted: #6b6b6b;
   --accent: #1976d2;
   --accent-dark: #135a9a;
@@ -144,14 +145,74 @@ body{
 .add-med{display:inline-block;width:100%;text-align:center;border:2px solid #9ecaa8;padding:14px;border-radius:6px;color:#0b6b3a;text-decoration:none;margin-top:10px;font-weight:700;transition:transform .12s ease,box-shadow .12s ease}
 .add-med:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(20,70,30,0.06)}
 
-/* FOOTER */
-.site-footer.dark{background:#022d3a;color:#fff;padding:36px 0 18px;margin-top:40px}
-.footer-grid{display:flex;gap:24px;align-items:flex-start;padding:24px 0}
-.footer-logo{width:86px;height:86px;object-fit:contain}
-.footer-cols{display:flex;gap:40px;flex:1}
-.footer-cols h4{margin:0 0 8px;font-size:15px}
-.small-list{list-style:disc;margin-left:18px;color:#cfe8ee}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:18px 0;text-align:center;color:#c9e6ee}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background: var(--teal-dark);
+  color: #fff;
+  padding: 60px 0 0;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 60px;
+  align-items: start;
+  padding-bottom: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-cols .col h4 {
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.footer-cols .col p,
+.footer-cols .col ul {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-cols .col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-cols .col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.footer-bottom small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
 
 /* Responsive */
 @media (max-width:1000px){
