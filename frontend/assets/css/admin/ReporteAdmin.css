@@ -1,164 +1,111 @@
-/* ReporteAdmin.css
-   Actualizado: mejora del navbar (alineación, responsivo, toggle móvil),
-   corrección para export-grid y footer pegado al fondo.
-*/
-
-/* Reset y variables */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --teal-dark: #141616;
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --muted: #666;
-  --bg: #f5f5f5;
+:root
+{
+    --teal-dark: #141616;
 }
 
-/* Ensure page occupies full height so footer can stick to bottom */
-html, body {
-  height: 100%;
-}
-
-/* Global */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: var(--bg);
-  color: #333;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* layout to push footer down when content is short */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
 }
 
-/* Header */
 .header {
-  background: white;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  position: relative; /* para menú móvil absoluto */
-  z-index: 20;
+    background: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.logo-icon {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.1rem;
+.logo {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
 }
 
 .logo-text h1 {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 2px;
+    font-size: 16px;
+    color: #4A90E2;
+    font-weight: 600;
 }
 
 .logo-text p {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-/* NAVIGATION (desktop + mobile) */
-.nav-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Toggle: hidden on desktop, visible on small screens */
-.nav-toggle {
-  display: none;
-  background: transparent;
-  border: 1px solid rgba(0,0,0,0.06);
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-  color: var(--muted);
+    font-size: 12px;
+    color: #666;
 }
 
 .nav-menu {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-/* Buttons */
 .nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border: none;
-  background: white;
-  color: var(--muted);
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.18s ease;
-  min-width: 110px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: #666;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
 }
 
-.nav-btn:hover,
-.nav-btn:focus {
-  background: #f0f0f0;
-  outline: none;
+.nav-btn:hover {
+    background: #f0f0f0;
 }
 
 .nav-btn.active {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 6px 18px rgba(56,142,255,0.14);
+    background: #4A90E2;
+    color: white;
 }
 
-.nav-btn[data-logout="true"] {
-  background: #fff6f6;
-  color: #d32f2f;
-  border: 1px solid rgba(243, 63, 63, 0.08);
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
 }
 
-/* Mobile menu: clonable, absolute and hidden by default */
-.nav-menu.mobile {
-  display: none;
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 1.5rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  flex-direction: column;
-  gap: 8px;
-  padding: 12px;
-  min-width: 220px;
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-/* When open (class toggled by JS) */
-.nav-menu.mobile.open {
-  display: flex;
+.logo,
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
 }
-
 /* Main layout */
 main.main-content {
   flex: 1 0 auto; /* occupy remaining vertical space so footer is pushed down */

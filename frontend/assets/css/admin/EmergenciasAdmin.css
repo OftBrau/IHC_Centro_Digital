@@ -9,7 +9,6 @@
     --teal-dark: #141616;
 }
 
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f7fa;
@@ -73,7 +72,18 @@ body {
     font-size: 14px;
     transition: all 0.3s;
 }
-
+.logo,
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
 .nav-btn:hover {
     background: #f0f0f0;
 }
