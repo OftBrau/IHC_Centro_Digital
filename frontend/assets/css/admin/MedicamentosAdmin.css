@@ -9,6 +9,12 @@
     --teal-dark: #141616;
 }
 
+.container{
+    max-width: 1400px;
+    margin: 6px  auto;
+    padding: 30px;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f7fa;
@@ -82,11 +88,6 @@ body {
     color: white;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 30px;
-}
 
 .page-header h2 {
     font-size: 1.75rem;
@@ -432,11 +433,6 @@ body {
     margin-top: auto;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
 
 .footer-inner {
     display: flex;
